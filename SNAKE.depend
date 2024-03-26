@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1711467569 source:d:\btl_gamesdl2\snake\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<cmath>
+	<chrono>
+	"SDL_utils.h"
+	"Game.h"
+	"Gallery.h"
+	"constants.h"
+
+1711467830 d:\btl_gamesdl2\snake\sdl_utils.h
+	<iostream>
+	<SDL.h>
+	<SDL2/SDL.h>
+	"Game.h"
+	"constants.h"
+	"Gallery.h"
+
+1711467801 d:\btl_gamesdl2\snake\game.h
+	"Snake.h"
+	"Position.h"
+
+1711467840 d:\btl_gamesdl2\snake\snake.h
+	<queue>
+	<vector>
+	"Position.h"
+
+1711467428 d:\btl_gamesdl2\snake\position.h
+	<stdexcept>
+
+1711448703 d:\btl_gamesdl2\snake\constants.h
+	<SDL.h>
+	<SDL2/SDL.h>
+
+1711467743 d:\btl_gamesdl2\snake\gallery.h
+	<vector>
+	<string>
+	<SDL.h>
+	<SDL2/SDL.h>
+
+1711468248 source:d:\btl_gamesdl2\snake\gallery.cpp
+	"Gallery.h"
+	"SDL_utils.h"
+	<SDL_image.h>
+	<SDL2/SDL_image.h>
+
+1711467706 source:d:\btl_gamesdl2\snake\sdl_utils.cpp
+	<iostream>
+	<SDL.h>
+	<SDL2/SDL.h>
+	"Game.h"
+	"constants.h"
+	"Gallery.h"
+
+1711450048 source:d:\btl_gamesdl2\snake\snake.cpp
+	"Snake.h"
+	"Game.h"
+	<iostream>
+
+1711467517 source:d:\btl_gamesdl2\snake\game.cpp
+	<vector>
+	<cassert>
+	<cstdlib>
+	<iostream>
+	"Game.h"
+
