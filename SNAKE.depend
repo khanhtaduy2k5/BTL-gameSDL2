@@ -127,7 +127,7 @@
 	"Game.h"
 	<iostream>
 
-1711638309 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1712108811 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"Gallery.h"
 	"SDL_utils.h"
 	<SDL_image.h>
