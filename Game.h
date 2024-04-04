@@ -41,7 +41,7 @@ public:
     void nextStep();
     const std::vector< std::vector<CellType> >& getSquares() const { return squares; }
     CellType getCellType(Position p) const;
-    void setGameStatus(GameStatus status);
+    void setGameStatus(GameStatus newStatus);
 
     std::vector<Position> getSnakePositions() const;
     Position getCherryPosition() const { return cherryPosition; }

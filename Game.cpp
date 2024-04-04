@@ -21,19 +21,27 @@ Game::~Game()
 {
 
 }
+void Game::setGameStatus(GameStatus newStatus) {
+    status = newStatus;
+}
 
 void Game::snakeMoveTo(Position pos) {
-    if (pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height || squares[pos.y][pos.x] == CELL_SNAKE) {
-        isGameOver();
+    if (pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height) {
+        setGameStatus(GAME_OVER);
         return;
     }
-    if (squares[pos.y][pos.x] == CELL_CHERRY) {
+    if (getCellType(pos) == CELL_SNAKE) {
+        setGameStatus(GAME_OVER);
+        return;
+    }
+    if (getCellType(pos) == CELL_CHERRY) {
         score++;
         snake.eatCherry();
         addCherry();
     } else {
         setCellType(pos, CELL_SNAKE);
     }
+    snake.slideTo(pos);
 }
 
 void Game::snakeLeave(Position position)

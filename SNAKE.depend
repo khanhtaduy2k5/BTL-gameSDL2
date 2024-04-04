@@ -66,14 +66,14 @@
 	<iostream>
 	"Game.h"
 
-1711467517 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
+1712249719 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
 	<vector>
 	<cassert>
 	<cstdlib>
 	<iostream>
 	"Game.h"
 
-1711467801 d:\btl_snakesdl2\btl-gamesdl2\game.h
+1712249719 d:\btl_snakesdl2\btl-gamesdl2\game.h
 	"Snake.h"
 	"Position.h"
 
@@ -122,12 +122,12 @@
 	"constants.h"
 	"Gallery.h"
 
-1711450048 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
+1712248364 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
 	"Snake.h"
 	"Game.h"
 	<iostream>
 
-1712108811 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1712246757 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"Gallery.h"
 	"SDL_utils.h"
 	<SDL_image.h>
