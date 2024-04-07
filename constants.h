@@ -19,7 +19,7 @@ const int BOARD_HEIGHT = 20;
 const int CELL_SIZE = 30;
 
 const SDL_Color BOARD_COLOR = {0, 0, 0};
-const SDL_Color LINE_COLOR = {128, 128, 128};
+const SDL_Color LINE_COLOR = {0, 128, 128};
 
 const double STEP_DELAY = 0.2;
 

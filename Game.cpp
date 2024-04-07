@@ -30,18 +30,16 @@ void Game::snakeMoveTo(Position pos) {
         setGameStatus(GAME_OVER);
         return;
     }
-    if (getCellType(pos) == CELL_SNAKE) {
-        setGameStatus(GAME_OVER);
-        return;
-    }
+    //if (getCellType(pos) == CELL_SNAKE) {
+       // setGameStatus(GAME_OVER);
+       // return;
+    //}
     if (getCellType(pos) == CELL_CHERRY) {
-        score++;
+        score ++;
         snake.eatCherry();
         addCherry();
-    } else {
-        setCellType(pos, CELL_SNAKE);
     }
-    snake.slideTo(pos);
+    setCellType(pos, CELL_SNAKE);
 }
 
 void Game::snakeLeave(Position position)
@@ -66,21 +64,24 @@ void Game::processUserInput(Direction direction)
 }
 
 bool Game::canChange(Direction current, Direction next) const {
-	if (current == UP || current == DOWN) {
-        return (next != UP && next != DOWN);
-    } else {
-        return (next != LEFT && next != RIGHT);
+    if ((current == UP && next == DOWN) || (current == DOWN && next == UP)){
+            return false;
     }
+    if ((current == LEFT && next == RIGHT) || (current == RIGHT && next == LEFT)) {
+        return false;
+    }
+    return true;
 }
 
-void Game::nextStep() {
-    while (!inputQueue.empty()) {
+void Game::nextStep()
+{
+	while (!inputQueue.empty()) {
         Direction next = inputQueue.front();
         inputQueue.pop();
         if (canChange(currentDirection, next)) {
-            currentDirection = next;
-            break;
-        }
+        	currentDirection = next;
+        	break;
+		}
     }
     snake.move(currentDirection);
 }
@@ -91,7 +92,6 @@ void Game::addCherry() {
         randomPos.x = rand() % width;
         randomPos.y = rand() % height;
         if (getCellType(randomPos) == CELL_EMPTY) {
-
             cherryPosition = randomPos;
             setCellType(randomPos, CELL_CHERRY);
             break;
