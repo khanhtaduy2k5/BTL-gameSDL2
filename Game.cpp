@@ -6,6 +6,7 @@
 #include "Game.h"
 
 using namespace std;
+
 Game::Game(int _width, int _height)
     : width(_width), height(_height),
 	  squares(_height, vector<CellType>(_width, CELL_EMPTY)),
@@ -15,47 +16,28 @@ Game::Game(int _width, int _height)
       score(0)
 {
 	addCherry();
-};
+}
 
 Game::~Game()
 {
-
-}
-void Game::setGameStatus(GameStatus newStatus) {
-    status = newStatus;
 }
 
 void Game::snakeMoveTo(Position pos) {
-    if (pos.x < 0 || pos.x >= width || pos.y < 0 || pos.y >= height) {
-        setGameStatus(GAME_OVER);
-        return;
+    if(!pos.isInsideBox(0,0,width,height) || getCellType(pos) == CELL_OFF_BOARD || getCellType(pos) == CELL_SNAKE){
+            status = GAME_OVER;
     }
-    //if (getCellType(pos) == CELL_SNAKE) {
-       // setGameStatus(GAME_OVER);
-       // return;
-    //}
-    if (getCellType(pos) == CELL_CHERRY) {
-        score ++;
+    else if (getCellType(pos) == CELL_CHERRY){
+        score++;
         snake.eatCherry();
         addCherry();
     }
-    setCellType(pos, CELL_SNAKE);
+    else{
+        setCellType(pos,CELL_SNAKE);
+    }
 }
 
-void Game::snakeLeave(Position position)
-{
-    if (position.x >= 0 && position.x < width && position.y >= 0 && position.y < height) {
-        bool emptyCell = true;
-        for (auto &bodyPart : snake.getPositions()) {
-            if (bodyPart == position) {
-                emptyCell = false;
-                break;
-            }
-        }
-        if (emptyCell) {
-            setCellType(position, CELL_EMPTY);
-        }
-    }
+void Game::snakeLeave(Position position){
+    setCellType(position,CELL_EMPTY);
 }
 
 void Game::processUserInput(Direction direction)
@@ -64,26 +46,25 @@ void Game::processUserInput(Direction direction)
 }
 
 bool Game::canChange(Direction current, Direction next) const {
-    if ((current == UP && next == DOWN) || (current == DOWN && next == UP)){
-            return false;
-    }
-    if ((current == LEFT && next == RIGHT) || (current == RIGHT && next == LEFT)) {
+	if ((current == UP || current == DOWN) && (next == UP || next == DOWN)) {
         return false;
-    }
-    return true;
+	}
+    if ((current == LEFT || current == RIGHT) && (next == LEFT || next == RIGHT)){
+		return false;
+	}
+	return true;
 }
 
-void Game::nextStep()
-{
-	while (!inputQueue.empty()) {
-        Direction next = inputQueue.front();
-        inputQueue.pop();
-        if (canChange(currentDirection, next)) {
-        	currentDirection = next;
-        	break;
+void Game::nextStep(){
+	while (!inputQueue.empty()){
+		Direction next = inputQueue.front();
+		inputQueue.pop();
+		if (canChange(currentDirection, next)){
+			currentDirection = next;
+			break;
 		}
-    }
-    snake.move(currentDirection);
+	}
+	snake.move(currentDirection);
 }
 
 void Game::addCherry() {
@@ -101,7 +82,9 @@ void Game::addCherry() {
 }
 
 void Game::setCellType(Position pos, CellType cellType) {
-    squares[pos.y][pos.x] = cellType;
+    if(pos.isInsideBox(0,0,width,height)){
+        squares[pos.y][pos.x] = cellType;
+    }
 }
 
 CellType Game::getCellType(Position pos) const
