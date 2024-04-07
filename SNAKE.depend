@@ -108,13 +108,13 @@
 	<SDL.h>
 	<SDL2/SDL.h>
 
-1711638377 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1712495456 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
 	<SDL2/SDL.h>
 
-1712110882 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1712497965 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	<SDL.h>
 	<SDL2/SDL.h>

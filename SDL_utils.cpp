@@ -51,7 +51,7 @@ void waitUntilKeyPressed()
         if ( SDL_WaitEvent(&e) != 0 &&
              (e.type == SDL_KEYDOWN || e.type == SDL_QUIT) )
             return;
-        SDL_Delay(100);
+        SDL_Delay(0);
     }
 }
 float generateRandomNumber()
@@ -107,6 +107,14 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery)
     int top = 0, left = 0;
     SDL_SetRenderDrawColor(renderer, BOARD_COLOR.r, BOARD_COLOR.g, BOARD_COLOR.b, 0);
     SDL_RenderClear(renderer);
+
+    SDL_Rect mrect;
+    mrect.x = 0;
+    mrect.x = 0;
+    mrect.w = 900;
+    mrect.h = 600;
+    SDL_RenderCopy(renderer, gallery->getImage(PIC_SNAKE_MAP), NULL, &mrect);
+
 
     for (int x = 0; x <= BOARD_WIDTH; x++)
         drawVerticalLine(renderer, left + x*CELL_SIZE, top, BOARD_HEIGHT);
