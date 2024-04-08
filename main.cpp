@@ -20,6 +20,7 @@ Gallery* gallery = nullptr;
 
 int main(int argc, char* argv[])
 {
+    srand(0);
     SDL_Window* window;
     SDL_Renderer* renderer;
     initSDL(window, renderer, SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);

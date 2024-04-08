@@ -68,7 +68,14 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 }
 
 void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
-    drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
+    int a = rand()%3;
+    if(a == PIC_PINEAPPLE)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
+    else if(a == PIC_APPLE)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
+    else if(a == PIC_MOUSE)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_MOUSE));
+
 }
 
 void drawSnake(SDL_Renderer* renderer, int left, int top, vector<Position> pos, Gallery* gallery){
