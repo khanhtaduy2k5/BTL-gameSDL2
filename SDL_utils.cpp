@@ -8,9 +8,7 @@
 #include "Game.h"
 #include "constants.h"
 #include "Gallery.h"
-void logSDLError(std::ostream& os,
-                 const std::string &msg, bool fatal)
-{
+void logSDLError(std::ostream& os, const std::string &msg, bool fatal){
     os << msg << " Error: " << SDL_GetError() << std::endl;
     if (fatal) {
         SDL_Quit();
@@ -19,8 +17,7 @@ void logSDLError(std::ostream& os,
 }
 
 void initSDL(SDL_Window* &window, SDL_Renderer* &renderer,
-	int screenWidth, int screenHeight, const char* windowTitle)
-{
+	int screenWidth, int screenHeight, const char* windowTitle){
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
         logSDLError(std::cout, "SDL_Init", true);
 
@@ -37,15 +34,13 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &renderer,
     SDL_RenderSetLogicalSize(renderer, screenWidth, screenHeight);
 }
 
-void quitSDL(SDL_Window* window, SDL_Renderer* renderer)
-{
+void quitSDL(SDL_Window* window, SDL_Renderer* renderer){
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
 
-void waitUntilKeyPressed()
-{
+void waitUntilKeyPressed(){
     SDL_Event e;
     while (true) {
         if ( SDL_WaitEvent(&e) != 0 &&
@@ -54,19 +49,16 @@ void waitUntilKeyPressed()
         SDL_Delay(0);
     }
 }
-float generateRandomNumber()
-{
+float generateRandomNumber(){
     return (float) rand() / RAND_MAX;
 }
 
-void renderSplashScreen()
-{
+void renderSplashScreen(){
     cout << "Press any key to start game" << endl;
     waitUntilKeyPressed();
 }
 
-void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Texture* texture)
-{
+void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Texture* texture){
 	SDL_Rect cell;
 	cell.x = left + pos.x * CELL_SIZE + 5;
 	cell.y = top + pos.y * CELL_SIZE + 5;
@@ -75,13 +67,11 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 	SDL_RenderCopy(renderer, texture, NULL, &cell);
 }
 
-void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery)
-{
+void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
     drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
 }
 
-void drawSnake(SDL_Renderer* renderer, int left, int top, vector<Position> pos, Gallery* gallery)
-{
+void drawSnake(SDL_Renderer* renderer, int left, int top, vector<Position> pos, Gallery* gallery){
 	drawCell(renderer, left, top, pos[pos.size()-1], gallery->getImage(PIC_SNAKE_HEAD));
     for (int i = pos.size() - 2; i >= 0; i--) {
         SDL_Texture* texture = gallery->getImage(
@@ -90,20 +80,17 @@ void drawSnake(SDL_Renderer* renderer, int left, int top, vector<Position> pos, 
     }
 }
 
-void drawVerticalLine(SDL_Renderer* renderer, int left, int top, int cells)
-{
+void drawVerticalLine(SDL_Renderer* renderer, int left, int top, int cells){
     SDL_SetRenderDrawColor(renderer, LINE_COLOR.r, LINE_COLOR.g, LINE_COLOR.b, 0);
     SDL_RenderDrawLine(renderer, left, top, left, top + cells * CELL_SIZE);
 }
 
-void drawHorizontalLine(SDL_Renderer* renderer, int left, int top, int cells)
-{
+void drawHorizontalLine(SDL_Renderer* renderer, int left, int top, int cells){
     SDL_SetRenderDrawColor(renderer, LINE_COLOR.r, LINE_COLOR.g, LINE_COLOR.b, 0);
     SDL_RenderDrawLine(renderer, left, top, left + cells * CELL_SIZE, top);
 }
 
-void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery)
-{
+void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery){
     int top = 0, left = 0;
     SDL_SetRenderDrawColor(renderer, BOARD_COLOR.r, BOARD_COLOR.g, BOARD_COLOR.b, 0);
     SDL_RenderClear(renderer);
@@ -127,13 +114,11 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery)
     SDL_RenderPresent(renderer);
 }
 
-void renderGameOver(SDL_Renderer* renderer, const Game& game)
-{
+void renderGameOver(SDL_Renderer* renderer, const Game& game){
 
 }
 
-void interpretEvent(SDL_Event e, Game& game)
-{
+void interpretEvent(SDL_Event e, Game& game){
     if (e.type == SDL_KEYUP) {
         switch (e.key.keysym.sym) {
         	case SDLK_UP: game.processUserInput(UP); break;
@@ -144,7 +129,6 @@ void interpretEvent(SDL_Event e, Game& game)
     }
 }
 
-void updateRankingTable(const Game& game)
-{
+void updateRankingTable(const Game& game){
 
 }
