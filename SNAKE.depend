@@ -107,9 +107,10 @@
 	<SDL.h>
 	<SDL2/SDL.h>
 
-1712801728 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1712802860 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
+	<SDL.h>
 	<SDL.h>
 
 1712801755 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp

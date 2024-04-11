@@ -6,11 +6,11 @@
 #include <string>
 
 
-//#if defined(_WIN64) || defined(_WIN32)
-//    #include <SDL.h>
-//#else
+#if defined(_WIN64) || defined(_WIN32)
     #include <SDL.h>
-//#endif
+#else
+    #include <SDL.h>
+#endif
 enum PictureID {
     PIC_CHERRY ,PIC_PINEAPPLE , PIC_APPLE ,
     PIC_SNAKE_VERTICAL,
