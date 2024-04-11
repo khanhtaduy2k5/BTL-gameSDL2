@@ -107,12 +107,12 @@
 	<SDL.h>
 	<SDL2/SDL.h>
 
-1712799650 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1712801728 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
 
-1712764899 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1712801755 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	<SDL.h>
 	<SDL2/SDL.h>
@@ -125,7 +125,7 @@
 	"Game.h"
 	<iostream>
 
-1712764899 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1712801701 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"Gallery.h"
 	"SDL_utils.h"
 	<SDL_image.h>

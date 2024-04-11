@@ -73,8 +73,8 @@ void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
     else if(a == PIC_APPLE)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
-    else if(a == PIC_MOUSE)
-        drawCell(renderer, left, top, pos, gallery->getImage(PIC_MOUSE));
+    else if(a == PIC_CHERRY)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
 
 }
 
