@@ -4,7 +4,6 @@
 #include<SDL.h>
 #include "Snake.h"
 #include "Position.h"
-
 enum GameStatus {
     GAME_RUNNING = 1,
     GAME_STOP = 2,

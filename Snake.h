@@ -4,8 +4,8 @@
 
 #include <queue>
 #include <vector>
+#include "SDL_utils.h"
 #include "Position.h"
-
 using namespace std;
 
 class Game;
@@ -36,8 +36,7 @@ public:
     SnakeNode* getHead();
     void slideTo(Position newPosition);
     void growAtFront(Position newPosition);
-    //Audio eating_sound.loadSound("audio/eating.wav");
-	//Audio lose_sound.loadSound("audio/lose.wav");
+    Mix_Chunk* eating;
 };
 
 #endif

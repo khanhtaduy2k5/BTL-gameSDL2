@@ -1,17 +1,7 @@
 
 #include <iostream>
-#if defined(_WIN64) || defined(_WIN32)
-    #include <SDL.h>
-#else
-    #include <SDL2/SDL.h>
-#endif
-//#include "Game.h"
-//#include "constants.h"
-//#include "Gallery.h"
 #include "SDL_utils.h"
-//#include "Audio.h"
-//Audio eating_sound;
-//Audio lose_sound;
+
 void logSDLError(std::ostream& os, const std::string &msg, bool fatal){
     os << msg << " Error: " << SDL_GetError() << std::endl;
     if (fatal) {
@@ -72,12 +62,12 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 }
 
 void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
-    int a = rand()%3;
-    if(a == PIC_PINEAPPLE)
-        drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
-    else if(a == PIC_APPLE)
-        drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
-    else if(a == PIC_CHERRY)
+    //int a = rand()%3;
+    //if(a == PIC_PINEAPPLE)
+        //drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
+    //else if(a == PIC_APPLE)
+        //drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
+    //else if(a == PIC_CHERRY)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
 
 }
@@ -127,11 +117,9 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery){
 
 void renderGameOver(SDL_Renderer* renderer, const Game& game){
     //eating_sound.loadSound("res/audio/sound/eating.wav");
-    Audio lose_sound;
-	lose_sound.loadSound("audio/lose.wav");
 }
 
-void interpretEvent(SDL_Event e, Game& game){
+void interpretEvent(SDL_Event e, Game& game, bool& isquit){
     if (e.type == SDL_KEYUP) {
         switch (e.key.keysym.sym) {
         	case SDLK_UP: game.processUserInput(UP); break;
@@ -140,6 +128,9 @@ void interpretEvent(SDL_Event e, Game& game){
         	case SDLK_RIGHT: game.processUserInput(RIGHT); break;
         }
     }
+     else if (e.type == SDL_QUIT){
+        isquit=true;
+     }
 }
 
 void updateRankingTable(const Game& game){

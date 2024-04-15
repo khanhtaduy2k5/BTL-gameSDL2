@@ -5,6 +5,7 @@
 #include <iostream>
 #include "SDL_utils.h"
 
+
 using namespace std;
 
 Game::Game(int _width, int _height)

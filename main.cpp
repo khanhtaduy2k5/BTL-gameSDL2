@@ -5,11 +5,6 @@
 #include <chrono>
 
 #include "SDL_utils.h"
-//#include "Game.h"
-//#include "Gallery.h"
-
-//#include "constants.h"
-
 using namespace std;
 
 
@@ -31,11 +26,10 @@ int main(int argc, char* argv[])
     renderSplashScreen();
     auto start = CLOCK_NOW();
     renderGamePlay(renderer, game, gallery);
-
-
-    while (game.isGameRunning()) {
+    bool isquit=false;
+    while (game.isGameRunning() && !isquit) {
         while (SDL_PollEvent(&e)) {
-            interpretEvent(e, game);
+            interpretEvent(e, game,isquit);
         }
 
         auto end = CLOCK_NOW();

@@ -1,8 +1,7 @@
 #ifndef TEXTOBJECT_H_INCLUDED
 #define TEXTOBJECT_H_INCLUDED
-#include <SDL.h>
+#include "SDL_utils.h"
 #include <string>
-#include <SDL_ttf.h>
 #include<iostream>
 using namespace std;
 class TextObject {

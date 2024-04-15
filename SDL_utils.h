@@ -3,23 +3,18 @@
 #define SDL_UTILS__H
 
 #include <iostream>
-
-#if defined(_WIN64) || defined(_WIN32)
-    //#include <SDL.h>
-#else
-    #include <SDL2/SDL.h>
-#endif
-
-
-#include<SDL_ttf.h>
-#include<SDL_image.h>
+#include <SDL.h>
+#include <SDL_mixer.h>
+#include <SDL_ttf.h>
+#include <SDL_image.h>
 #include "Game.h"
 #include "constants.h"
 #include "Gallery.h"
-#include "Audio.h"
 #include "Snake.h"
 #include "Position.h"
 #include "TextObject.h"
+#include "Snake.h"
+
 void logSDLError(std::ostream& os,
                  const std::string &msg, bool fatal = false);
 
@@ -32,7 +27,7 @@ void waitUntilKeyPressed();
 void renderSplashScreen();
 void renderGamePlay(SDL_Renderer*, const Game& game, Gallery* gallery);
 void renderGameOver(SDL_Renderer* renderer, const Game& game);
-void interpretEvent(SDL_Event e, Game& game);
+void interpretEvent(SDL_Event e, Game& game, bool& isquit);
 void updateRankingTable(const Game& game);
 void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size);
 //Audio eating_sound;

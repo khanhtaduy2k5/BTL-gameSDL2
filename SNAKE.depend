@@ -66,27 +66,28 @@
 	<iostream>
 	"Game.h"
 
-1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
+1713194259 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
 	<vector>
 	<cassert>
 	<cstdlib>
 	<iostream>
 	"SDL_utils.h"
 
-1712847172 d:\btl_snakesdl2\btl-gamesdl2\game.h
+1713195082 d:\btl_snakesdl2\btl-gamesdl2\game.h
 	<SDL.h>
 	"Snake.h"
 	"Position.h"
 
-1713189266 d:\btl_snakesdl2\btl-gamesdl2\snake.h
+1713195200 d:\btl_snakesdl2\btl-gamesdl2\snake.h
 	<queue>
 	<vector>
+	"SDL_utils.h"
 	"Position.h"
 
 1712764899 d:\btl_snakesdl2\btl-gamesdl2\position.h
 	<stdexcept>
 
-1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
+1713194846 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -94,52 +95,45 @@
 	<chrono>
 	"SDL_utils.h"
 
-1713189975 d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.h
+1713194918 d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.h
 	<iostream>
-	<SDL2/SDL.h>
+	<SDL.h>
+	<SDL_mixer.h>
 	<SDL_ttf.h>
 	<SDL_image.h>
 	"Game.h"
 	"constants.h"
 	"Gallery.h"
-	"Audio.h"
 	"Snake.h"
 	"Position.h"
 	"TextObject.h"
+	"Snake.h"
 
-1712800440 d:\btl_snakesdl2\btl-gamesdl2\constants.h
+1713195355 d:\btl_snakesdl2\btl-gamesdl2\constants.h
 	<SDL.h>
-	<SDL2/SDL.h>
 
-1712802860 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1713194713 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
-	<SDL.h>
 
-1713190125 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1713194848 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
-	<SDL.h>
-	<SDL2/SDL.h>
 	"SDL_utils.h"
 
-1713190293 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
+1713195162 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
 	"SDL_utils.h"
 	<iostream>
 
-1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1713194848 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"SDL_utils.h"
-	<SDL_image.h>
-	<SDL2/SDL_image.h>
 
-1713190381 source:d:\btl_snakesdl2\btl-gamesdl2\textobject.cpp
+1713194848 source:d:\btl_snakesdl2\btl-gamesdl2\textobject.cpp
 	"SDL_utils.h"
-	<SDL_ttf.h>
 
-1712847574 d:\btl_snakesdl2\btl-gamesdl2\textobject.h
-	<SDL.h>
+1713194848 d:\btl_snakesdl2\btl-gamesdl2\textobject.h
+	"SDL_utils.h"
 	<string>
-	<SDL_ttf.h>
 	<iostream>
 
 1713188176 source:d:\btl_snakesdl2\btl-gamesdl2\audio.cpp
