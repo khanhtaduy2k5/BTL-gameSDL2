@@ -5,9 +5,13 @@
 #else
     #include <SDL2/SDL.h>
 #endif
-#include "Game.h"
-#include "constants.h"
-#include "Gallery.h"
+//#include "Game.h"
+//#include "constants.h"
+//#include "Gallery.h"
+#include "SDL_utils.h"
+//#include "Audio.h"
+//Audio eating_sound;
+//Audio lose_sound;
 void logSDLError(std::ostream& os, const std::string &msg, bool fatal){
     os << msg << " Error: " << SDL_GetError() << std::endl;
     if (fatal) {
@@ -122,7 +126,9 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery){
 }
 
 void renderGameOver(SDL_Renderer* renderer, const Game& game){
-
+    //eating_sound.loadSound("res/audio/sound/eating.wav");
+    Audio lose_sound;
+	lose_sound.loadSound("audio/lose.wav");
 }
 
 void interpretEvent(SDL_Event e, Game& game){
@@ -138,4 +144,24 @@ void interpretEvent(SDL_Event e, Game& game){
 
 void updateRankingTable(const Game& game){
 
+}
+
+
+
+void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size)
+{
+    if(TTF_Init()==-1){
+        cout <<"loi "<<endl;
+    }
+    TTF_Font* font = TTF_OpenFont("font/VBODONP.ttf", size);
+        if (font == nullptr) {
+            cout<< "Failed to load font: " << TTF_GetError() << endl;
+    }
+    SDL_Color White = {255,255,255};
+    SDL_Surface *textSurface = TTF_RenderText_Solid(font, input.c_str(), White);
+    SDL_Texture *text = SDL_CreateTextureFromSurface(renderer, textSurface);
+//    SDL_FreeSurface(textSurface);
+    SDL_Rect renderQuad = {x, y, textSurface->w, textSurface->h};
+    SDL_RenderCopy(renderer, text, NULL, &renderQuad);
+    SDL_DestroyTexture(text);
 }

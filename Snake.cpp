@@ -1,7 +1,9 @@
-
-#include "Snake.h"
-#include "Game.h"
+#include "SDL_utils.h"
+//#include "Snake.h"
+//#include "Game.h"
 #include <iostream>
+//#include "Audio.h"
+
 Snake::Snake(Game& _game, Position start)
     : head(new SnakeNode(start)), tail(head), game(_game), cherry(0)
 {
@@ -47,7 +49,9 @@ void Snake::slideTo(Position newPosition){
 
 void Snake::eatCherry(){
     cherry++;
-
+     Audio eating_sound;
+     eating_sound.loadSound("audio/eating.wav");
+	//lose_sound.loadSound("res/audio/sound/lose.wav");
 }
 
 void Snake::move(Direction direction){

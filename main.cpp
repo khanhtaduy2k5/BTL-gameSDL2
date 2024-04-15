@@ -5,10 +5,10 @@
 #include <chrono>
 
 #include "SDL_utils.h"
-#include "Game.h"
-#include "Gallery.h"
+//#include "Game.h"
+//#include "Gallery.h"
 
-#include "constants.h"
+//#include "constants.h"
 
 using namespace std;
 

@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Audio.cpp" />
+		<Unit filename="Audio.h" />
 		<Unit filename="Gallery.cpp" />
 		<Unit filename="Gallery.h" />
 		<Unit filename="Game.cpp" />
@@ -41,6 +43,8 @@
 		<Unit filename="SDL_utils.h" />
 		<Unit filename="Snake.cpp" />
 		<Unit filename="Snake.h" />
+		<Unit filename="TextObject.cpp" />
+		<Unit filename="TextObject.h" />
 		<Unit filename="constants.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

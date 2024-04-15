@@ -36,6 +36,8 @@ public:
     SnakeNode* getHead();
     void slideTo(Position newPosition);
     void growAtFront(Position newPosition);
+    //Audio eating_sound.loadSound("audio/eating.wav");
+	//Audio lose_sound.loadSound("audio/lose.wav");
 };
 
 #endif

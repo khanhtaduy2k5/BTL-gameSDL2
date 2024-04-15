@@ -66,18 +66,19 @@
 	<iostream>
 	"Game.h"
 
-1712764899 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
+1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
 	<vector>
 	<cassert>
 	<cstdlib>
 	<iostream>
-	"Game.h"
+	"SDL_utils.h"
 
-1712764899 d:\btl_snakesdl2\btl-gamesdl2\game.h
+1712847172 d:\btl_snakesdl2\btl-gamesdl2\game.h
+	<SDL.h>
 	"Snake.h"
 	"Position.h"
 
-1712764899 d:\btl_snakesdl2\btl-gamesdl2\snake.h
+1713189266 d:\btl_snakesdl2\btl-gamesdl2\snake.h
 	<queue>
 	<vector>
 	"Position.h"
@@ -85,23 +86,26 @@
 1712764899 d:\btl_snakesdl2\btl-gamesdl2\position.h
 	<stdexcept>
 
-1712764899 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
+1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<cmath>
 	<chrono>
 	"SDL_utils.h"
-	"Game.h"
-	"Gallery.h"
-	"constants.h"
 
-1712765730 d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.h
+1713189975 d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.h
 	<iostream>
 	<SDL2/SDL.h>
+	<SDL_ttf.h>
+	<SDL_image.h>
 	"Game.h"
 	"constants.h"
 	"Gallery.h"
+	"Audio.h"
+	"Snake.h"
+	"Position.h"
+	"TextObject.h"
 
 1712800440 d:\btl_snakesdl2\btl-gamesdl2\constants.h
 	<SDL.h>
@@ -113,22 +117,36 @@
 	<SDL.h>
 	<SDL.h>
 
-1712801755 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1713190125 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	<SDL.h>
 	<SDL2/SDL.h>
-	"Game.h"
-	"constants.h"
-	"Gallery.h"
+	"SDL_utils.h"
 
-1712764899 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
-	"Snake.h"
-	"Game.h"
+1713190293 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
+	"SDL_utils.h"
 	<iostream>
 
-1712801701 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
-	"Gallery.h"
+1713189775 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"SDL_utils.h"
 	<SDL_image.h>
 	<SDL2/SDL_image.h>
+
+1713190381 source:d:\btl_snakesdl2\btl-gamesdl2\textobject.cpp
+	"SDL_utils.h"
+	<SDL_ttf.h>
+
+1712847574 d:\btl_snakesdl2\btl-gamesdl2\textobject.h
+	<SDL.h>
+	<string>
+	<SDL_ttf.h>
+	<iostream>
+
+1713188176 source:d:\btl_snakesdl2\btl-gamesdl2\audio.cpp
+	"Audio.h"
+	<iostream>
+
+1713190101 d:\btl_snakesdl2\btl-gamesdl2\audio.h
+	"Game.h"
+	<SDL_mixer.h>
 

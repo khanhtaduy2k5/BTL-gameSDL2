@@ -1,5 +1,5 @@
 
-#include "Gallery.h"
+//#include "Gallery.h"
 #include "SDL_utils.h"
 
 #if defined(_WIN64) || defined(_WIN32)

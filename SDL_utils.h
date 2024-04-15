@@ -11,12 +11,15 @@
 #endif
 
 
-
-
+#include<SDL_ttf.h>
+#include<SDL_image.h>
 #include "Game.h"
 #include "constants.h"
 #include "Gallery.h"
-
+#include "Audio.h"
+#include "Snake.h"
+#include "Position.h"
+#include "TextObject.h"
 void logSDLError(std::ostream& os,
                  const std::string &msg, bool fatal = false);
 
@@ -31,5 +34,7 @@ void renderGamePlay(SDL_Renderer*, const Game& game, Gallery* gallery);
 void renderGameOver(SDL_Renderer* renderer, const Game& game);
 void interpretEvent(SDL_Event e, Game& game);
 void updateRankingTable(const Game& game);
-
+void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size);
+//Audio eating_sound;
+//Audio lose_sound;
 #endif

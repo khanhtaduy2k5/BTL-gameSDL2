@@ -1,7 +1,7 @@
 
 #ifndef GAME_H
 #define GAME_H
-
+#include<SDL.h>
 #include "Snake.h"
 #include "Position.h"
 
@@ -60,6 +60,7 @@ public:
     void setCellType(Position pos, CellType cellType);
     Snake getSnake();
 	void addCherry();
+
 
 };
 

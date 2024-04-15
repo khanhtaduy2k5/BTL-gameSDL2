@@ -3,7 +3,7 @@
 #include <cassert>
 #include <cstdlib>
 #include <iostream>
-#include "Game.h"
+#include "SDL_utils.h"
 
 using namespace std;
 
