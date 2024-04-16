@@ -51,6 +51,14 @@ void Snake::eatCherry(){
     Mix_FreeChunk(eating);
 }
 
+void Snake::eatApple(){
+    cherry += 2 ;
+}
+void Snake::eatPineApple(){
+    cherry += 3 ;
+}
+
+
 void Snake::move(Direction direction){
     Position newPosition = head->position.move(direction);
     game.snakeMoveTo(newPosition);

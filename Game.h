@@ -14,10 +14,10 @@ enum GameStatus {
 enum CellType {
     CELL_EMPTY = 0,
     CELL_SNAKE,
-    CELL_CHERRY,
+    CELL_CHERRY, CELL_PINEAPPLE, CELL_APPLE,
     CELL_OFF_BOARD
 };
-
+extern int ranD;
 class Game
 {
     std::vector< std::vector<CellType> > squares;
@@ -28,6 +28,7 @@ class Game
     Direction currentDirection;
     Position cherryPosition;
 public:
+
 	const int width;
 	const int height;
 

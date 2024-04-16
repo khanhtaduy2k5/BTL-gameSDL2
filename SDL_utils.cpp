@@ -1,6 +1,15 @@
 
 #include <iostream>
 #include "SDL_utils.h"
+#include<string>
+#include<sstream>
+
+const std::string S_SCORE_TEXT = "Score: ";
+TTF_Font* m_sansFont=TTF_OpenFont("font/VBODONP.ttf", 30);
+const int S_TEXT_X = 400;
+const int S_TEXT_Y = 565;
+const int S_TEXT_RECT_WIDTH = 320;
+const int S_TEXT_RECT_HEIGHT = 30;
 
 void logSDLError(std::ostream& os, const std::string &msg, bool fatal){
     os << msg << " Error: " << SDL_GetError() << std::endl;
@@ -62,12 +71,11 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 }
 
 void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
-    //int a = rand()%3;
-    //if(a == PIC_PINEAPPLE)
-        //drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
-    //else if(a == PIC_APPLE)
-        //drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
-    //else if(a == PIC_CHERRY)
+    if(ranD == 2)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
+    else if(ranD == 1)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
+    else if(ranD == 0)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
 
 }
@@ -116,7 +124,7 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery){
 }
 
 void renderGameOver(SDL_Renderer* renderer, const Game& game){
-    //eating_sound.loadSound("res/audio/sound/eating.wav");
+
 }
 
 void interpretEvent(SDL_Event e, Game& game, bool& isquit){
@@ -139,12 +147,12 @@ void updateRankingTable(const Game& game){
 
 
 
-void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size)
+/*void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size)
 {
     if(TTF_Init()==-1){
         cout <<"loi "<<endl;
     }
-    TTF_Font* font = TTF_OpenFont("font/VBODONP.ttf", size);
+    TTF_Font* font = TTF_OpenFont("font/VBODONP.ttf", 30);
         if (font == nullptr) {
             cout<< "Failed to load font: " << TTF_GetError() << endl;
     }
@@ -155,4 +163,25 @@ void CreateGameText(SDL_Renderer* renderer,string input, int x, int y,int size)
     SDL_Rect renderQuad = {x, y, textSurface->w, textSurface->h};
     SDL_RenderCopy(renderer, text, NULL, &renderQuad);
     SDL_DestroyTexture(text);
+}*/
+
+std::string createText(int score) {
+	std::stringstream sstr;
+	sstr << S_SCORE_TEXT << score;
+	return sstr.str();
+}
+
+void drawText(int score) {
+	std::string text = createText(score);
+    SDL_Renderer* renderer;
+	SDL_Color whiteColor = {255, 255, 255};
+	SDL_Surface* m_textSurface = TTF_RenderText_Solid(m_sansFont, text.c_str(),
+			whiteColor);
+	SDL_Texture* m_textTexture = SDL_CreateTextureFromSurface(renderer, m_textSurface);
+
+	SDL_Rect rectangle = {
+		S_TEXT_X, S_TEXT_Y, S_TEXT_RECT_WIDTH, S_TEXT_RECT_HEIGHT
+	};
+
+	SDL_RenderCopy(renderer, m_textTexture, NULL, &rectangle);
 }

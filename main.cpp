@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
     auto start = CLOCK_NOW();
     renderGamePlay(renderer, game, gallery);
     bool isquit=false;
+
     while (game.isGameRunning() && !isquit) {
         while (SDL_PollEvent(&e)) {
             interpretEvent(e, game,isquit);
@@ -47,4 +48,5 @@ int main(int argc, char* argv[])
     delete gallery;
     quitSDL(window, renderer);
     return 0;
+
 }

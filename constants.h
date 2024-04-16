@@ -15,5 +15,5 @@ const int CELL_SIZE = 30;
 const SDL_Color BOARD_COLOR = {0,64, 64};
 const SDL_Color LINE_COLOR = {0, 128, 128};
 
-const double STEP_DELAY = 0.2;
+const double STEP_DELAY = 0.3;
 #endif

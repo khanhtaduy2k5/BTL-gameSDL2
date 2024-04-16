@@ -30,7 +30,11 @@ public:
     void move(Direction direction);
     bool checkPosition(Position pos);
     vector<Position> getPositions() const;
+
     void eatCherry();
+    void eatApple();
+    void eatPineApple();
+
     int getNumCherry();
     SnakeNode* getTail();
     SnakeNode* getHead();

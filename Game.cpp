@@ -8,6 +8,8 @@
 
 using namespace std;
 
+int ranD = 0;
+
 Game::Game(int _width, int _height)
     : width(_width), height(_height),
 	  squares(_height, vector<CellType>(_width, CELL_EMPTY)),
@@ -32,6 +34,15 @@ void Game::snakeMoveTo(Position pos) {
         snake.eatCherry();
         addCherry();
     }
+    else if (getCellType(pos) == CELL_PINEAPPLE){
+        snake.eatPineApple();
+        addCherry();
+    }
+    else if (getCellType(pos) == CELL_APPLE){
+        snake.eatApple();
+        addCherry();
+    }
+
     else{
         setCellType(pos,CELL_SNAKE);
     }
@@ -75,7 +86,20 @@ void Game::addCherry() {
         randomPos.y = rand() % height;
         if (getCellType(randomPos) == CELL_EMPTY) {
             cherryPosition = randomPos;
-            setCellType(randomPos, CELL_CHERRY);
+            ranD = rand()% 3;
+            std::cout<<ranD<<" ";
+            switch(ranD){
+            case 0:
+                setCellType(randomPos, CELL_APPLE);
+                break;
+            case 1:
+                setCellType(randomPos, CELL_CHERRY);
+                break;
+            case 2:
+                setCellType(randomPos, CELL_PINEAPPLE);
+                break;
+            }
+
             break;
         }
     }
