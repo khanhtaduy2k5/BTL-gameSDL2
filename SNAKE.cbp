@@ -36,13 +36,13 @@
 		<Unit filename="Gallery.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="Position.h" />
 		<Unit filename="SDL_utils.cpp" />
 		<Unit filename="SDL_utils.h" />
 		<Unit filename="Snake.cpp" />
 		<Unit filename="Snake.h" />
-		<Unit filename="TextObject.cpp" />
-		<Unit filename="TextObject.h" />
 		<Unit filename="constants.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>

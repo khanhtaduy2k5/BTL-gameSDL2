@@ -40,8 +40,9 @@ void quitSDL(SDL_Window* window, SDL_Renderer* renderer){
 }
 
 void waitUntilKeyPressed(){
-    SDL_Event e;
     while (true) {
+        SDL_Event e;
+        //SDL_RenderCopy(renderer, gallery->getImage(PIC_SNAKE_MENU), NULL, &mrect);
         if ( SDL_WaitEvent(&e) != 0 &&
              (e.type == SDL_KEYDOWN || e.type == SDL_QUIT) )
             return;
@@ -67,12 +68,12 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 }
 
 void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
-    if(ranD == 2)
-        drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
-    else if(ranD == 1)
+    if(ranD == 1)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
     else if(ranD == 0)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
+    else if(ranD == 2)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
 
 }
 
@@ -147,7 +148,7 @@ void updateRankingTable(const Game& game){
 void CreateGameText(SDL_Renderer* renderer,std::string input, int x, int y)
 {
     if(TTF_Init()==-1){
-        std::cout <<"loi "<<endl;
+        std::cout <<"Error "<<endl;
     }
     TTF_Font* font = TTF_OpenFont("font/VBODONP.ttf", 30);
         if (font == nullptr) {

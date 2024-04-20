@@ -3,6 +3,7 @@
 #include <ctime>
 #include <cmath>
 #include <chrono>
+#include "Menu.h"
 
 #include "SDL_utils.h"
 using namespace std;
@@ -19,34 +20,38 @@ int main(int argc, char* argv[])
     SDL_Window* window;
     SDL_Renderer* renderer;
     initSDL(window, renderer, SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
-    gallery = new Gallery(renderer);
-    Game game(BOARD_WIDTH, BOARD_HEIGHT);
-    SDL_Event e;
 
-    renderSplashScreen();
-    auto start = CLOCK_NOW();
-    renderGamePlay(renderer, game, gallery);
-    bool isquit=false;
+    Menu menu(window, renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
-    while (game.isGameRunning() && !isquit) {
-        while (SDL_PollEvent(&e)) {
-            interpretEvent(e, game,isquit);
+    Select choice = menu.ShowMenu();
+    if (choice == PLAY){
+        gallery = new Gallery(renderer);
+        Game game(BOARD_WIDTH, BOARD_HEIGHT);
+        SDL_Event e;
+        renderGamePlay(renderer, game, gallery);
+        renderSplashScreen();
+        auto start = CLOCK_NOW();
+        renderGamePlay(renderer, game, gallery);
+        bool isquit=false;
+
+        while (game.isGameRunning() && !isquit) {
+            while (SDL_PollEvent(&e)) {
+                interpretEvent(e, game,isquit);
+            }
+            auto end = CLOCK_NOW();
+            ElapsedTime elapsed = end-start;
+            if (elapsed.count() > STEP_DELAY) {
+                game.nextStep();
+                renderGamePlay(renderer, game, gallery);
+
+                start = end;
+            }
+            SDL_Delay(1);
         }
-
-        auto end = CLOCK_NOW();
-        ElapsedTime elapsed = end-start;
-        if (elapsed.count() > STEP_DELAY) {
-            game.nextStep();
-            renderGamePlay(renderer, game, gallery);
-
-            start = end;
-        }
-        SDL_Delay(1);
+        renderGameOver(renderer, game);
+        updateRankingTable(game);
     }
-//    renderGameOver(renderer, game);
-//    updateRankingTable(game);
-
-    delete gallery;
+        delete gallery;
     quitSDL(window, renderer);
     return 0;
 

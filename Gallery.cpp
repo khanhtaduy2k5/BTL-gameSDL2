@@ -31,6 +31,7 @@ SDL_Texture* Gallery::loadTexture(std::string path )
 void Gallery::loadGamePictures()
 {
     pictures[PIC_SNAKE_MAP] = loadTexture("picture/map.jpg");
+    pictures[PIC_SNAKE_START] = loadTexture("picture/start.jpg");
     pictures[PIC_CHERRY] = loadTexture("picture/cherry.jpg");
     pictures[PIC_PINEAPPLE] = loadTexture("picture/pineapple.jpg");
     pictures[PIC_APPLE] = loadTexture("picture/apple.jpg");

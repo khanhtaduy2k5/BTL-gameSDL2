@@ -87,12 +87,13 @@
 1712764899 d:\btl_snakesdl2\btl-gamesdl2\position.h
 	<stdexcept>
 
-1713432362 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
+1713630183 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
 	<cmath>
 	<chrono>
+	"Menu.h"
 	"SDL_utils.h"
 
 1713432798 d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.h
@@ -109,15 +110,15 @@
 	"TextObject.h"
 	"Snake.h"
 
-1713433844 d:\btl_snakesdl2\btl-gamesdl2\constants.h
+1713605069 d:\btl_snakesdl2\btl-gamesdl2\constants.h
 	<SDL.h>
 
-1713194713 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1713626977 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
 
-1713433896 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1713629342 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	"SDL_utils.h"
 	<string>
@@ -127,7 +128,7 @@
 	"SDL_utils.h"
 	<iostream>
 
-1713194848 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1713608741 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"SDL_utils.h"
 
 1713432027 source:d:\btl_snakesdl2\btl-gamesdl2\textobject.cpp
@@ -144,4 +145,12 @@
 1713190101 d:\btl_snakesdl2\btl-gamesdl2\audio.h
 	"Game.h"
 	<SDL_mixer.h>
+
+1713630983 source:d:\btl_snakesdl2\btl-gamesdl2\menu.cpp
+	"Menu.h"
+	"SDL_utils.h"
+
+1713628130 d:\btl_snakesdl2\btl-gamesdl2\menu.h
+	"SDL_utils.h"
+	"Gallery.h"
 
