@@ -47,15 +47,13 @@ void Snake::slideTo(Position newPosition){
 
 void Snake::eatCherry(){
     cherry++;
-    eating = Mix_LoadWAV("audio/eating.wav");
-    Mix_FreeChunk(eating);
 }
 
 void Snake::eatApple(){
-    cherry -= 2 ;
+    cherry += 2 ;
 }
 void Snake::eatPineApple(){
-    cherry += 2 ;
+    cherry += 3 ;
 }
 
 

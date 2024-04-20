@@ -68,9 +68,9 @@ void drawCell(SDL_Renderer* renderer, int left, int top, Position pos, SDL_Textu
 }
 
 void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery* gallery){
-    if(ranD == 1)
+    if(ranD == 0)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_APPLE));
-    else if(ranD == 0)
+    else if(ranD == 1)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
     else if(ranD == 2)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
