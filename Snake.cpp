@@ -52,10 +52,10 @@ void Snake::eatCherry(){
 }
 
 void Snake::eatApple(){
-    cherry += 2 ;
+    cherry -= 2 ;
 }
 void Snake::eatPineApple(){
-    cherry += 3 ;
+    cherry += 2 ;
 }
 
 

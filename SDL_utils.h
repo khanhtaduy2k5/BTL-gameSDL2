@@ -30,5 +30,6 @@ void renderGameOver(SDL_Renderer* renderer, const Game& game);
 void interpretEvent(SDL_Event e, Game& game, bool& isquit);
 void updateRankingTable(const Game& game);
 std::string createText(int score);
-void drawText(int score);
+void drawText(SDL_Renderer* renderer, int score);
+void CreateGameText(SDL_Renderer* renderer,std::string input, int x, int y);
 #endif

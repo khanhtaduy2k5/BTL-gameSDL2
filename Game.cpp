@@ -36,10 +36,13 @@ void Game::snakeMoveTo(Position pos) {
     }
     else if (getCellType(pos) == CELL_PINEAPPLE){
         snake.eatPineApple();
+        score += 2;
         addCherry();
+
     }
     else if (getCellType(pos) == CELL_APPLE){
         snake.eatApple();
+        score += 3;
         addCherry();
     }
 

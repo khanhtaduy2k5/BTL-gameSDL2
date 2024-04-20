@@ -5,7 +5,7 @@
 #include <SDL.h>
 
 const int SCREEN_WIDTH = 900;
-const int SCREEN_HEIGHT = 600;
+const int SCREEN_HEIGHT = 660;
 const char WINDOW_TITLE[] = "Snake Game";
 
 const int BOARD_WIDTH = 30;

@@ -23,7 +23,7 @@ class Game
     std::vector< std::vector<CellType> > squares;
     Snake snake;
     GameStatus status;
-    int score;
+    //int score;
     std::queue<Direction> inputQueue;
     Direction currentDirection;
     Position cherryPosition;
@@ -34,7 +34,7 @@ public:
 
     Game(int _width, int _height);
     ~Game();
-
+    int score;
     bool isGameRunning() const { return status == GAME_RUNNING; }
     bool isGameOver() const { return status == GAME_OVER; }
     void processUserInput(Direction direction);

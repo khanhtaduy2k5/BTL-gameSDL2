@@ -38,12 +38,13 @@ int main(int argc, char* argv[])
         if (elapsed.count() > STEP_DELAY) {
             game.nextStep();
             renderGamePlay(renderer, game, gallery);
+
             start = end;
         }
         SDL_Delay(1);
     }
-    renderGameOver(renderer, game);
-    updateRankingTable(game);
+//    renderGameOver(renderer, game);
+//    updateRankingTable(game);
 
     delete gallery;
     quitSDL(window, renderer);
