@@ -18,8 +18,10 @@ Snake::Snake(Game& _game, Position start)
     game.snakeMoveTo(start);
 }
 
-Snake::~Snake(){
-    for (SnakeNode *p = tail; p != nullptr;){
+Snake::~Snake()
+{
+    for (SnakeNode *p = tail; p != nullptr;)
+    {
         SnakeNode *nextNode = p->next;
         delete p;
         p = nextNode;
@@ -46,11 +48,14 @@ void Snake::growAtFront(Position newPosition)
     head = newHead;
 }
 
-void Snake::slideTo(Position newPosition){
-    if (tail->next == nullptr){
+void Snake::slideTo(Position newPosition)
+{
+    if (tail->next == nullptr)
+    {
         tail->position = newPosition;
     }
-    else{
+    else
+    {
         SnakeNode *oldTailNode = tail;
         tail = tail->next;
         oldTailNode->next = nullptr;
@@ -60,44 +65,51 @@ void Snake::slideTo(Position newPosition){
     }
 }
 
-void Snake::eatCherry(){
+void Snake::eatCherry()
+{
     cherry++;
     //eat_cherry=Mix_LoadWAV("eatcherry.wav");
     Mix_PlayChannel(-1,eat_cherry,0);
 
 }
 
-void Snake::eatApple(){
+void Snake::eatApple()
+{
     cherry -- ;
     //Mix_Chunk* eat_apple= Mix_LoadWAV("eatapple.wav");
     Mix_PlayChannel(-1,eat_apple,0);
 }
 
-void Snake::eatPineApple(){
+void Snake::eatPineApple()
+{
     cherry += 2 ;
     //Mix_Chunk* eat_pineapple = Mix_LoadWAV("eatpineapple.wav");
     Mix_PlayChannel(-1,eat_pineapple,0);
 }
 
-void Snake::eatLemon(){
+void Snake::eatLemon()
+{
     cherry -= 2 ;
     //Mix_Chunk* eat_lemon= Mix_LoadWAV("eatlemon.wav");
     Mix_PlayChannel(-1,eat_lemon,0);
 }
 
-void Snake::eatCarrot(){
+void Snake::eatCarrot()
+{
     cherry += 3 ;
     //Mix_Chunk* eat_carrot=Mix_LoadWAV("eatcarrot.wav");
     Mix_PlayChannel(-1,eat_carrot,0);
 }
 
 
-void Snake::move(Direction direction){
+void Snake::move(Direction direction)
+{
     Position newPosition = head->position.move(direction);
     game.snakeMoveTo(newPosition);
     if (game.isGameOver())
         return;
-    if (cherry > 0){
+    if (cherry > 0)
+    {
         cherry--;
         growAtFront(newPosition);
     }
@@ -107,15 +119,18 @@ void Snake::move(Direction direction){
     }
 }
 
-int Snake::getNumCherry(){
+int Snake::getNumCherry()
+{
     return cherry;
 }
 
-SnakeNode* Snake::getHead(){
+SnakeNode* Snake::getHead()
+{
     return head;
 }
 
-SnakeNode* Snake::getTail(){
+SnakeNode* Snake::getTail()
+{
     return tail;
 }
 

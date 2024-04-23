@@ -5,17 +5,23 @@
 #include "Snake.h"
 #include "Position.h"
 #include <SDL_mixer.h>
-enum GameStatus {
+enum GameStatus
+{
     GAME_RUNNING = 1,
     GAME_STOP = 2,
     GAME_WON = 4 | GAME_STOP,
     GAME_OVER = 8 | GAME_STOP,
 };
 
-enum CellType {
+enum CellType
+{
     CELL_EMPTY = 0,
     CELL_SNAKE,
-    CELL_CHERRY, CELL_PINEAPPLE, CELL_APPLE,CELL_LEMON,CELL_CARROT,
+    CELL_CHERRY,
+    CELL_PINEAPPLE,
+    CELL_APPLE,
+    CELL_LEMON,
+    CELL_CARROT,
     CELL_OFF_BOARD
 };
 

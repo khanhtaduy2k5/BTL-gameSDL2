@@ -24,7 +24,8 @@ int main(int argc, char* argv[])
     Menu menu(window, renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 
     Select choice = menu.ShowMenu();
-    if (choice == PLAY){
+    if (choice == PLAY)
+    {
         gallery = new Gallery(renderer);
         Game game(BOARD_WIDTH, BOARD_HEIGHT);
         SDL_Event e;
@@ -34,13 +35,16 @@ int main(int argc, char* argv[])
         renderGamePlay(renderer, game, gallery);
         bool isquit=false;
 
-        while (game.isGameRunning() && !isquit) {
-            while (SDL_PollEvent(&e)) {
+        while (game.isGameRunning() && !isquit)
+        {
+            while (SDL_PollEvent(&e))
+            {
                 interpretEvent(e, game,isquit);
             }
             auto end = CLOCK_NOW();
             ElapsedTime elapsed = end-start;
-            if (elapsed.count() > STEP_DELAY) {
+            if (elapsed.count() > STEP_DELAY)
+            {
                 game.nextStep();
                 renderGamePlay(renderer, game, gallery);
 
