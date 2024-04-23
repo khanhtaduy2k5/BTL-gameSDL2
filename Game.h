@@ -4,6 +4,7 @@
 #include<SDL.h>
 #include "Snake.h"
 #include "Position.h"
+#include <SDL_mixer.h>
 enum GameStatus {
     GAME_RUNNING = 1,
     GAME_STOP = 2,
@@ -17,7 +18,9 @@ enum CellType {
     CELL_CHERRY, CELL_PINEAPPLE, CELL_APPLE,CELL_LEMON,CELL_CARROT,
     CELL_OFF_BOARD
 };
+
 extern int ranD;
+
 class Game
 {
     std::vector< std::vector<CellType> > squares;
@@ -61,7 +64,6 @@ public:
     void setCellType(Position pos, CellType cellType);
     Snake getSnake();
 	void addCherry();
-
 
 };
 

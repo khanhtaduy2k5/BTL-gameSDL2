@@ -21,6 +21,10 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &renderer,
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
         logSDLError(std::cout, "SDL_Init", true);
 
+    if(Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT,2,2048) == -1){
+        std::cout << "MIX AUDIO ERROR"<<Mix_GetError()<<std::endl;
+    }
+
     window = SDL_CreateWindow(windowTitle, SDL_WINDOWPOS_CENTERED,
        SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
     if (window == nullptr) logSDLError(std::cout, "CreateWindow", true);
@@ -168,5 +172,19 @@ void CreateGameText(SDL_Renderer* renderer,std::string input, int x, int y)
     SDL_RenderCopy(renderer, text, NULL, &renderQuad);
     SDL_DestroyTexture(text);
 }
+Mix_Chunk* loadSound(std::string soundname){
+    if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1){
+        std::cout << "LỖI ÂM THANH MIX: " << Mix_GetError() << std::endl;
+    }
+
+    std::string path = "audio/" + soundname; // Construct complete path
+    Mix_Chunk* chunk = Mix_LoadWAV(path.c_str()); // Load sound using complete path
+
+    if (chunk == NULL){
+        std::cout<<"ERROR loading file: " << path << ", chunk is null: " << Mix_GetError() << std::endl;
+    }
+    return chunk;
+}
+
 
 

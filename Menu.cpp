@@ -66,10 +66,10 @@ void Menu::RenderHowToPlay() {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
         SDL_Rect howToPlayRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-        //SDL_RenderCopy(renderer,  "howtoplay.png", NULL, &howToPlayRect);
+        //SDL_RenderCopy(renderer,  "picture/howtoplay.jpg", NULL, &howToPlayRect);
 
         //SDL_Rect backRect = {howToPlayRect.w-BUTTON_SIZE, 0, BUTTON_SIZE, BUTTON_SIZE};
-        //SDL_RenderCopy(renderer, loadTexture::loadT(renderer, "backbutton.png"), NULL, &backRect);
+        //SDL_RenderCopy(renderer, , NULL, &backRect);
 
         SDL_RenderPresent(renderer);
 

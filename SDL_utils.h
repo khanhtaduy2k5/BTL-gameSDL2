@@ -30,4 +30,5 @@ void updateRankingTable(const Game& game);
 std::string createText(int score);
 void drawText(SDL_Renderer* renderer, int score);
 void CreateGameText(SDL_Renderer* renderer,std::string input, int x, int y);
+Mix_Chunk* loadSound(std::string soundname);
 #endif

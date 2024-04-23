@@ -1,6 +1,16 @@
 
 #include "SDL_utils.h"
 #include <iostream>
+#include <SDL_mixer.h>
+
+Mix_Chunk* eat_cherry=loadSound("eatcherry.wav");
+Mix_Chunk* eat_apple=loadSound("eatapple.wav");
+Mix_Chunk* eat_pineapple=loadSound("eatpineapple.wav");
+Mix_Chunk* eat_lemon= loadSound("eatlemon.wav");
+Mix_Chunk* eat_carrot=loadSound("eatcarrot.wav");
+
+
+
 
 Snake::Snake(Game& _game, Position start)
     : head(new SnakeNode(start)), tail(head), game(_game), cherry(0)
@@ -14,6 +24,11 @@ Snake::~Snake(){
         delete p;
         p = nextNode;
     }
+    Mix_FreeChunk(eat_cherry);
+    Mix_FreeChunk(eat_apple);
+    Mix_FreeChunk(eat_pineapple);
+    Mix_FreeChunk(eat_lemon);
+    Mix_FreeChunk(eat_carrot);
 }
 
 vector<Position> Snake::getPositions() const
@@ -47,22 +62,33 @@ void Snake::slideTo(Position newPosition){
 
 void Snake::eatCherry(){
     cherry++;
+    //eat_cherry=Mix_LoadWAV("eatcherry.wav");
+    Mix_PlayChannel(-1,eat_cherry,0);
+
 }
 
 void Snake::eatApple(){
     cherry -- ;
+    //Mix_Chunk* eat_apple= Mix_LoadWAV("eatapple.wav");
+    Mix_PlayChannel(-1,eat_apple,0);
 }
 
 void Snake::eatPineApple(){
     cherry += 2 ;
+    //Mix_Chunk* eat_pineapple = Mix_LoadWAV("eatpineapple.wav");
+    Mix_PlayChannel(-1,eat_pineapple,0);
 }
 
 void Snake::eatLemon(){
     cherry -= 2 ;
+    //Mix_Chunk* eat_lemon= Mix_LoadWAV("eatlemon.wav");
+    Mix_PlayChannel(-1,eat_lemon,0);
 }
 
 void Snake::eatCarrot(){
     cherry += 3 ;
+    //Mix_Chunk* eat_carrot=Mix_LoadWAV("eatcarrot.wav");
+    Mix_PlayChannel(-1,eat_carrot,0);
 }
 
 
@@ -92,3 +118,5 @@ SnakeNode* Snake::getHead(){
 SnakeNode* Snake::getTail(){
     return tail;
 }
+
+

@@ -43,7 +43,7 @@ public:
     SnakeNode* getHead();
     void slideTo(Position newPosition);
     void growAtFront(Position newPosition);
-    //Mix_Chunk* eating;
+
 };
 
 #endif
