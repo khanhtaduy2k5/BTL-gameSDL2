@@ -12,8 +12,6 @@
 #include "Gallery.h"
 #include "Snake.h"
 #include "Position.h"
-#include "TextObject.h"
-#include "Snake.h"
 
 void logSDLError(std::ostream& os,
                  const std::string &msg, bool fatal = false);
