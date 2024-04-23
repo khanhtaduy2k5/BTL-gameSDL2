@@ -34,13 +34,16 @@ public:
     void eatCherry();
     void eatApple();
     void eatPineApple();
+    void eatLemon();
+    void eatCarrot();
+
 
     int getNumCherry();
     SnakeNode* getTail();
     SnakeNode* getHead();
     void slideTo(Position newPosition);
     void growAtFront(Position newPosition);
-    Mix_Chunk* eating;
+    //Mix_Chunk* eating;
 };
 
 #endif

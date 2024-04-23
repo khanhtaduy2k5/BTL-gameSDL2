@@ -7,6 +7,7 @@
 const std::string S_SCORE_TEXT = "Score: ";
 TTF_Font* m_sansFont=TTF_OpenFont("font/VBODONP.ttf", 30);
 
+
 void logSDLError(std::ostream& os, const std::string &msg, bool fatal){
     os << msg << " Error: " << SDL_GetError() << std::endl;
     if (fatal) {
@@ -42,7 +43,7 @@ void quitSDL(SDL_Window* window, SDL_Renderer* renderer){
 void waitUntilKeyPressed(){
     while (true) {
         SDL_Event e;
-        //SDL_RenderCopy(renderer, gallery->getImage(PIC_SNAKE_MENU), NULL, &mrect);
+
         if ( SDL_WaitEvent(&e) != 0 &&
              (e.type == SDL_KEYDOWN || e.type == SDL_QUIT) )
             return;
@@ -74,6 +75,10 @@ void drawCherry(SDL_Renderer* renderer, int left, int top, Position pos, Gallery
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_CHERRY));
     else if(ranD == 2)
         drawCell(renderer, left, top, pos, gallery->getImage(PIC_PINEAPPLE));
+    else if(ranD == 3)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_LEMON));
+    else if(ranD == 4)
+        drawCell(renderer, left, top, pos, gallery->getImage(PIC_CARROT));
 
 }
 
@@ -118,6 +123,8 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery){
     drawSnake(renderer, left, top, game.getSnakePositions(), gallery);
     CreateGameText(renderer, S_SCORE_TEXT,30, 600);
     CreateGameText(renderer, std::to_string(game.score), 150, 600);
+    CreateGameText(renderer, "Live: ", 300,600);
+    CreateGameText(renderer, std::to_string(game.live),420,600);
     SDL_RenderPresent(renderer);
 }
 

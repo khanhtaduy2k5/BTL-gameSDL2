@@ -66,19 +66,19 @@
 	<iostream>
 	"Game.h"
 
-1713603698 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
+1713864883 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
 	<vector>
 	<cassert>
 	<cstdlib>
 	<iostream>
 	"SDL_utils.h"
 
-1713430984 d:\btl_snakesdl2\btl-gamesdl2\game.h
+1713866127 d:\btl_snakesdl2\btl-gamesdl2\game.h
 	<SDL.h>
 	"Snake.h"
 	"Position.h"
 
-1713268851 d:\btl_snakesdl2\btl-gamesdl2\snake.h
+1713801247 d:\btl_snakesdl2\btl-gamesdl2\snake.h
 	<queue>
 	<vector>
 	"SDL_utils.h"
@@ -87,7 +87,7 @@
 1712764899 d:\btl_snakesdl2\btl-gamesdl2\position.h
 	<stdexcept>
 
-1713630183 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
+1713802363 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -113,22 +113,22 @@
 1713631730 d:\btl_snakesdl2\btl-gamesdl2\constants.h
 	<SDL.h>
 
-1713626977 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1713803827 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
 
-1713631466 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1713864038 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	"SDL_utils.h"
 	<string>
 	<sstream>
 
-1713603915 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
+1713801247 source:d:\btl_snakesdl2\btl-gamesdl2\snake.cpp
 	"SDL_utils.h"
 	<iostream>
 
-1713608741 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
+1713803756 source:d:\btl_snakesdl2\btl-gamesdl2\gallery.cpp
 	"SDL_utils.h"
 
 1713432027 source:d:\btl_snakesdl2\btl-gamesdl2\textobject.cpp

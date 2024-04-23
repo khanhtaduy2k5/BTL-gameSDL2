@@ -27,7 +27,8 @@ Game::~Game()
 
 void Game::snakeMoveTo(Position pos) {
     if(!pos.isInsideBox(0,0,width,height) || getCellType(pos) == CELL_OFF_BOARD || getCellType(pos) == CELL_SNAKE){
-            status = GAME_OVER;
+            live--;
+            if (live == 0) status = GAME_OVER;
     }
     else if (getCellType(pos) == CELL_CHERRY){
         score++;
@@ -43,6 +44,16 @@ void Game::snakeMoveTo(Position pos) {
     else if (getCellType(pos) == CELL_APPLE){
         snake.eatApple();
         score += 3;
+        addCherry();
+    }
+    else if (getCellType(pos) == CELL_LEMON){
+        snake.eatLemon();
+        score += 4;
+        addCherry();
+    }
+    else if (getCellType(pos) == CELL_CARROT){
+        snake.eatCarrot();
+        score += 5;
         addCherry();
     }
 
@@ -89,7 +100,7 @@ void Game::addCherry() {
         randomPos.y = rand() % height;
         if (getCellType(randomPos) == CELL_EMPTY) {
             cherryPosition = randomPos;
-            ranD = rand()% 3;
+            ranD = rand()% 5;
             std::cout<<ranD<<" ";
             switch(ranD){
             case 0:
@@ -100,6 +111,12 @@ void Game::addCherry() {
                 break;
             case 2:
                 setCellType(randomPos, CELL_PINEAPPLE);
+                break;
+            case 3:
+                setCellType(randomPos, CELL_LEMON);
+                break;
+            case 4:
+                setCellType(randomPos, CELL_CARROT);
                 break;
             }
 

@@ -50,9 +50,18 @@ void Snake::eatCherry(){
 }
 
 void Snake::eatApple(){
+    cherry -- ;
+}
+
+void Snake::eatPineApple(){
     cherry += 2 ;
 }
-void Snake::eatPineApple(){
+
+void Snake::eatLemon(){
+    cherry -= 2 ;
+}
+
+void Snake::eatCarrot(){
     cherry += 3 ;
 }
 
