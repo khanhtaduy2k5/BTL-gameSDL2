@@ -7,47 +7,56 @@ Menu::Menu(SDL_Window* window, SDL_Renderer* renderer, int SCREEN_WIDTH, int SCR
         gallery = new Gallery(renderer);
     }
 
-Menu::~Menu() {}
+Menu::~Menu()
+{
 
-Select Menu::ShowMenu() {
+}
+
+Select Menu::ShowMenu()
+{
     bool isMenu = true;
     SDL_Event e;
     Select choice = PLAY;
-    while (isMenu) {
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-            SDL_RenderClear(renderer);
+    while (isMenu)
+    {
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderClear(renderer);
 
-            // Ve nen menu chinh
-            SDL_Rect backgroundRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-            SDL_Rect exitRect = {80,490,170,100};
-            SDL_Rect scoreRect = {360,490,170,100};
-            SDL_Rect playRect = {650,490,170,100};
-            SDL_Rect howToPlayRect={765,90,60,80};
-            if(gallery->getImage(PIC_SNAKE_START)==nullptr){
-                std::cout<<"Unable to load texture"<<endl;
-            }
 
-            SDL_RenderCopy(renderer,gallery->getImage(PIC_SNAKE_START), NULL, &backgroundRect);
-            SDL_RenderPresent(renderer);
+        SDL_Rect backgroundRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+        SDL_Rect exitRect = {80,490,170,100};
+        SDL_Rect scoreRect = {360,490,170,100};
+        SDL_Rect playRect = {650,490,170,100};
+        SDL_Rect howToPlayRect={765,90,60,80};
+        if(gallery->getImage(PIC_SNAKE_START)==nullptr){
+            std::cout<<"Unable to load texture"<<std::endl;
+    }
 
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
-                choice = QUIT;
+    SDL_RenderCopy(renderer,gallery->getImage(PIC_SNAKE_START), NULL, &backgroundRect);
+    SDL_RenderPresent(renderer);
+
+    while (SDL_PollEvent(&e) != 0)
+    {
+        if (e.type == SDL_QUIT) {
+            choice = QUIT;
+            isMenu = false;
+        }
+        else if (e.type == SDL_MOUSEBUTTONDOWN) {
+            int x, y;
+            SDL_GetMouseState(&x, &y);
+            SDL_Point p ={x, y};
+            if (SDL_PointInRect(&p, &playRect))
+            {
+                choice = PLAY;
                 isMenu = false;
             }
-            else if (e.type == SDL_MOUSEBUTTONDOWN) {
-                int x, y;
-                SDL_GetMouseState(&x, &y);
-                SDL_Point p ={x, y};
-                if (SDL_PointInRect(&p, &playRect)){
-                    choice = PLAY;
-                    isMenu = false;
-                }
-                else if (SDL_PointInRect(&p, &howToPlayRect)) {
+                else if (SDL_PointInRect(&p, &howToPlayRect))
+                {
                     choice = HOW_TO_PLAY;
                     RenderHowToPlay();
                 }
-                else if (SDL_PointInRect(&p, &exitRect)){
+                else if (SDL_PointInRect(&p, &exitRect))
+                {
                     choice = EXIT;
                     isMenu = false;
                 }
@@ -58,11 +67,13 @@ Select Menu::ShowMenu() {
     return choice;
 }
 
-void Menu::RenderHowToPlay() {
+void Menu::RenderHowToPlay()
+{
     bool isRunning = true;
     SDL_Event e;
 
-    while (isRunning) {
+    while (isRunning)
+    {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
         SDL_Rect howToPlayRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
@@ -73,15 +84,19 @@ void Menu::RenderHowToPlay() {
 
         SDL_RenderPresent(renderer);
 
-        while (SDL_PollEvent(&e) != 0) {
-            if (e.type == SDL_QUIT) {
+        while (SDL_PollEvent(&e) != 0)
+        {
+            if (e.type == SDL_QUIT)
+            {
                 isRunning = false;
             }
-            else if (e.type == SDL_MOUSEBUTTONDOWN) {
+            else if (e.type == SDL_MOUSEBUTTONDOWN)
+            {
                 int x, y;
                 SDL_GetMouseState(&x, &y);
                 SDL_Point p ={x, y};
-                //if (SDL_PointInRect(&p, &backRect)) {
+                //if (SDL_PointInRect(&p, &backRect))
+                //{
                     //isRunning = false;
                 //}
             }

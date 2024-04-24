@@ -4,10 +4,9 @@
 #include <cmath>
 #include <chrono>
 #include "Menu.h"
-
 #include "SDL_utils.h"
-using namespace std;
 
+using namespace std;
 
 #define CLOCK_NOW chrono::system_clock::now
 typedef chrono::duration<double> ElapsedTime;
@@ -47,7 +46,6 @@ int main(int argc, char* argv[])
             {
                 game.nextStep();
                 renderGamePlay(renderer, game, gallery);
-
                 start = end;
             }
             SDL_Delay(1);
@@ -55,7 +53,7 @@ int main(int argc, char* argv[])
     renderGameOver(renderer, game);
     updateRankingTable(game);
 }
-        delete gallery;
+    delete gallery;
     quitSDL(window, renderer);
     return 0;
 

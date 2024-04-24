@@ -89,14 +89,14 @@ void Snake::eatPineApple()
 
 void Snake::eatLemon()
 {
-    cherry -= 2 ;
+    cherry++ ;
     //Mix_Chunk* eat_lemon= Mix_LoadWAV("eatlemon.wav");
     Mix_PlayChannel(-1,eat_lemon,0);
 }
 
 void Snake::eatCarrot()
 {
-    cherry += 3 ;
+    cherry /= 2 ;
     //Mix_Chunk* eat_carrot=Mix_LoadWAV("eatcarrot.wav");
     Mix_PlayChannel(-1,eat_carrot,0);
 }

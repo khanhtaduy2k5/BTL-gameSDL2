@@ -58,6 +58,7 @@ void Game::snakeMoveTo(Position pos)
     else if (getCellType(pos) == CELL_LEMON)
     {
         snake.eatLemon();
+        live++;
         score += 4;
         addCherry();
     }
