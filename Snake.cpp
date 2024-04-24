@@ -68,36 +68,31 @@ void Snake::slideTo(Position newPosition)
 void Snake::eatCherry()
 {
     cherry++;
-    //eat_cherry=Mix_LoadWAV("eatcherry.wav");
     Mix_PlayChannel(-1,eat_cherry,0);
 
 }
 
 void Snake::eatApple()
 {
-    cherry -- ;
-    //Mix_Chunk* eat_apple= Mix_LoadWAV("eatapple.wav");
+    cherry-- ;
     Mix_PlayChannel(-1,eat_apple,0);
 }
 
 void Snake::eatPineApple()
 {
-    cherry += 2 ;
-    //Mix_Chunk* eat_pineapple = Mix_LoadWAV("eatpineapple.wav");
+    cherry+=2 ;
     Mix_PlayChannel(-1,eat_pineapple,0);
 }
 
 void Snake::eatLemon()
 {
-    cherry++ ;
-    //Mix_Chunk* eat_lemon= Mix_LoadWAV("eatlemon.wav");
+    cherry++;
     Mix_PlayChannel(-1,eat_lemon,0);
 }
 
 void Snake::eatCarrot()
 {
-    cherry /= 2 ;
-    //Mix_Chunk* eat_carrot=Mix_LoadWAV("eatcarrot.wav");
+    cherry+=3;
     Mix_PlayChannel(-1,eat_carrot,0);
 }
 

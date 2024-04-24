@@ -195,8 +195,7 @@ Snake Game::getSnake()
 	return snake;
 }
 
-Game::
-~Game()
+Game::~Game()
 {
 
 }

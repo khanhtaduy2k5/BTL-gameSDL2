@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
                 interpretEvent(e, game,isquit);
             }
             auto end = CLOCK_NOW();
-            ElapsedTime elapsed = end-start;
+            ElapsedTime elapsed = end - start;
             if (elapsed.count() > STEP_DELAY)
             {
                 game.nextStep();
@@ -51,7 +51,6 @@ int main(int argc, char* argv[])
             SDL_Delay(1);
         }
     renderGameOver(renderer, game);
-    updateRankingTable(game);
 }
     delete gallery;
     quitSDL(window, renderer);

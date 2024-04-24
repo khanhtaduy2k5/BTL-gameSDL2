@@ -41,6 +41,9 @@ void Gallery::loadGamePictures()
     pictures[PIC_LEMON] = loadTexture("picture/lemon.jpg");
     pictures[PIC_CARROT] = loadTexture("picture/carrot.png");
     pictures[PIC_GAME_OVER] = loadTexture("picture/gamevoer.png");
+    pictures[PIC_HOW_TO_PLAY] = loadTexture("picture/howtoplay.png");
+    pictures[PIC_BACK] = loadTexture("picture/back.jpg");
+
 
 
 }

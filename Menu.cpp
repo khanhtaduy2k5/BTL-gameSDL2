@@ -24,6 +24,7 @@ Select Menu::ShowMenu()
 
 
         SDL_Rect backgroundRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
+
         SDL_Rect exitRect = {80,490,170,100};
         SDL_Rect scoreRect = {360,490,170,100};
         SDL_Rect playRect = {650,490,170,100};
@@ -76,11 +77,10 @@ void Menu::RenderHowToPlay()
     {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
-        SDL_Rect howToPlayRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-        //SDL_RenderCopy(renderer,  "picture/howtoplay.jpg", NULL, &howToPlayRect);
-
-        //SDL_Rect backRect = {howToPlayRect.w-BUTTON_SIZE, 0, BUTTON_SIZE, BUTTON_SIZE};
-        //SDL_RenderCopy(renderer, , NULL, &backRect);
+        SDL_Rect howtoPlayRect={0,0,SCREEN_WIDTH,SCREEN_HEIGHT};
+        SDL_RenderCopy(renderer,gallery->getImage(PIC_HOW_TO_PLAY), NULL, &howtoPlayRect);
+        SDL_Rect backRect = {0, 0, 100, 100};
+        SDL_RenderCopy(renderer,gallery->getImage(PIC_BACK) , NULL, &backRect);
 
         SDL_RenderPresent(renderer);
 
@@ -95,10 +95,10 @@ void Menu::RenderHowToPlay()
                 int x, y;
                 SDL_GetMouseState(&x, &y);
                 SDL_Point p ={x, y};
-                //if (SDL_PointInRect(&p, &backRect))
-                //{
-                    //isRunning = false;
-                //}
+                if (SDL_PointInRect(&p, &backRect))
+                {
+                    isRunning = false;
+                }
             }
         }
     }

@@ -2,6 +2,7 @@
 #include "SDL_utils.h"
 #include<string>
 #include<sstream>
+#include<fstream>
 
 using namespace std;
 
@@ -186,11 +187,6 @@ void interpretEvent(SDL_Event e, Game& game, bool& isquit)
      }
 }
 
-void updateRankingTable(const Game& game)
-{
-
-}
-
 void CreateGameText(SDL_Renderer* renderer,string input, int x, int y)
 {
     if(TTF_Init()==-1)
@@ -225,6 +221,22 @@ Mix_Chunk* loadSound(string soundname)
     }
     return chunk;
 }
+
+int getHighestScore() {
+	ifstream file("highest_score.txt");
+	int highestScore;
+	file >> highestScore;
+	file.close();
+	return highestScore;
+}
+
+void Record(const int &HighestScore) {
+	ofstream outfile;
+	outfile.open("highest_score.txt", ios::out | ios::trunc);
+	outfile << HighestScore;
+	outfile.close();
+}
+
 
 
 
