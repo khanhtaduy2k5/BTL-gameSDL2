@@ -1,4 +1,3 @@
-
 #include <vector>
 #include <cassert>
 #include <cstdlib>
@@ -6,10 +5,7 @@
 #include "SDL_utils.h"
 #include <SDL_mixer.h>
 
-
 using namespace std;
-
-
 
 int ranD = 0;
 
@@ -26,20 +22,21 @@ Game::Game(int _width, int _height)
 
 void Game::snakeMoveTo(Position pos)
 {
-    if(!pos.isInsideBox(0,0,width,height) || getCellType(pos) == CELL_OFF_BOARD || getCellType(pos) == CELL_SNAKE)
+    if(!pos.isInsideBox(0,0,width,height) || getCellType(pos) == CELL_OFF_BOARD)
     {
-            live--;
-            if (live == 0) {
-                status = GAME_OVER;
-
-            }
-
+        live = 0;
+        status = GAME_OVER;
     }
+    else if (getCellType(pos) == CELL_SNAKE){
+        live--;
+        if (live == 0) status = GAME_OVER;
+    }
+
 
     else if (getCellType(pos) == CELL_CHERRY)
     {
-        score++;
         snake.eatCherry();
+        score++;
         addCherry();
     }
 
@@ -128,7 +125,7 @@ void Game::addCherry()
         {
             cherryPosition = randomPos;
             ranD = rand()% 5;
-            std::cout<<ranD<<" ";
+            //std::cout<<ranD<<" ";
             switch(ranD)
             {
             case 0:

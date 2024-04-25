@@ -8,6 +8,7 @@ enum Select{
     PLAY,
     HOW_TO_PLAY,
     EXIT,
+    SHOW_HIGHEST_SCORE,
     QUIT
 };
 class Menu

@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <SDL.h>
-//const int PIC_COUNT = 11;
+
 enum PictureID {
     PIC_CHERRY ,PIC_PINEAPPLE , PIC_APPLE ,PIC_CARROT , PIC_LEMON,
     PIC_SNAKE_VERTICAL, PIC_HOW_TO_PLAY, PIC_BACK,
@@ -14,7 +14,7 @@ enum PictureID {
 
 class Gallery
 {
-    SDL_Texture* pictures[PIC_COUNT];
+    SDL_Texture* pictures[30];
     SDL_Renderer* renderer;
     SDL_Texture* loadTexture(std::string path);
 public:

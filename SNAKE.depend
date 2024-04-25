@@ -66,7 +66,7 @@
 	<iostream>
 	"Game.h"
 
-1714040779 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
+1714044489 source:d:\btl_snakesdl2\btl-gamesdl2\game.cpp
 	<vector>
 	<cassert>
 	<cstdlib>
@@ -113,7 +113,7 @@
 1713975591 d:\btl_snakesdl2\btl-gamesdl2\constants.h
 	<SDL.h>
 
-1713965896 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
+1714044113 d:\btl_snakesdl2\btl-gamesdl2\gallery.h
 	<vector>
 	<string>
 	<SDL.h>
@@ -148,11 +148,11 @@
 	"Game.h"
 	<SDL_mixer.h>
 
-1714042859 source:d:\btl_snakesdl2\btl-gamesdl2\menu.cpp
+1714054609 source:d:\btl_snakesdl2\btl-gamesdl2\menu.cpp
 	"Menu.h"
 	"SDL_utils.h"
 
-1713628130 d:\btl_snakesdl2\btl-gamesdl2\menu.h
+1714054541 d:\btl_snakesdl2\btl-gamesdl2\menu.h
 	"SDL_utils.h"
 	"Gallery.h"
 
