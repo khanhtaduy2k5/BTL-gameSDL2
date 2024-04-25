@@ -8,7 +8,6 @@ enum Select{
     PLAY,
     HOW_TO_PLAY,
     EXIT,
-    SHOW_HIGHEST_SCORE,
     QUIT
 };
 class Menu
@@ -22,12 +21,8 @@ public:
     void RenderHowToPlay();
 private:
     SDL_Event e;
-    const int SizeSelectionW = SCREEN_WIDTH/3;
-    const int SizeSelectionH = 100;
-
     SDL_Window* window;
     SDL_Renderer* renderer;
-
     Gallery* gallery;
 
 };

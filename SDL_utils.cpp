@@ -219,21 +219,5 @@ Mix_Chunk* loadSound(string soundname)
     return chunk;
 }
 
-int getHighestScore() {
-	ifstream file("highest_score.txt");
-	int highestScore;
-	file >> highestScore;
-	file.close();
-	return highestScore;
-}
-
-void Record(const int &HighestScore) {
-	ofstream outfile;
-	outfile.open("highest_score.txt", ios::out | ios::trunc);
-	outfile << HighestScore;
-	outfile.close();
-}
-
-
 
 

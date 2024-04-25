@@ -21,12 +21,8 @@ Select Menu::ShowMenu()
     {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
         SDL_RenderClear(renderer);
-
-
         SDL_Rect backgroundRect = {0, 0, SCREEN_WIDTH, SCREEN_HEIGHT};
-
         SDL_Rect exitRect = {80,490,170,100};
-        SDL_Rect scoreRect = {360,490,170,100};
         SDL_Rect playRect = {650,490,170,100};
         SDL_Rect howToPlayRect={765,90,60,80};
         if(gallery->getImage(PIC_SNAKE_START)==nullptr){
