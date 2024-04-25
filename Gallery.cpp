@@ -45,6 +45,5 @@ void Gallery::loadGamePictures()
     pictures[PIC_BACK] = loadTexture("picture/back.jpg");
 
 
-
 }
 

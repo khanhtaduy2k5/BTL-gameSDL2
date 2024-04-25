@@ -164,10 +164,7 @@ void renderGamePlay(SDL_Renderer* renderer, const Game& game, Gallery* gallery)
     SDL_RenderPresent(renderer);
 }
 
-void renderGameOver(SDL_Renderer* renderer, const Game& game)
-{
 
-}
 
 void interpretEvent(SDL_Event e, Game& game, bool& isquit)
 {

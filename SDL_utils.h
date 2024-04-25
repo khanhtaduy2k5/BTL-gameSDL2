@@ -24,7 +24,7 @@ void quitSDL(SDL_Window* window, SDL_Renderer* renderer);
 void waitUntilKeyPressed();
 void renderSplashScreen();
 void renderGamePlay(SDL_Renderer*, const Game& game, Gallery* gallery);
-void renderGameOver(SDL_Renderer* renderer, const Game& game);
+
 void interpretEvent(SDL_Event e, Game& game, bool& isquit);
 
 std::string createText(int score);

@@ -102,7 +102,10 @@ void Snake::move(Direction direction)
     Position newPosition = head->position.move(direction);
     game.snakeMoveTo(newPosition);
     if (game.isGameOver())
+    {
         return;
+    }
+
     if (cherry > 0)
     {
         cherry--;

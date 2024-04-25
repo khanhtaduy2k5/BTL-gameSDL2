@@ -25,32 +25,39 @@ int main(int argc, char* argv[])
     Select choice = menu.ShowMenu();
     if (choice == PLAY)
     {
+//        cout<<"choice Play"<<endl;
         gallery = new Gallery(renderer);
         Game game(BOARD_WIDTH, BOARD_HEIGHT);
         SDL_Event e;
-        renderGamePlay(renderer, game, gallery);
-        renderSplashScreen();
         auto start = CLOCK_NOW();
-        renderGamePlay(renderer, game, gallery);
         bool isquit=false;
-
-        while (game.isGameRunning() && !isquit)
+        renderGamePlay(renderer, game, gallery);
+            renderSplashScreen();
+        while ( !isquit)
         {
+//            cout <<"ve game chinh"<<endl;
             while (SDL_PollEvent(&e))
             {
+//                cout <<"nhan su kien game"<<endl;
                 interpretEvent(e, game,isquit);
             }
-            auto end = CLOCK_NOW();
-            ElapsedTime elapsed = end - start;
-            if (elapsed.count() > STEP_DELAY)
-            {
-                game.nextStep();
-                renderGamePlay(renderer, game, gallery);
-                start = end;
-            }
+            if(game.isGameRunning()){
+                auto end = CLOCK_NOW();
+                ElapsedTime elapsed = end - start;
+                if (elapsed.count() > STEP_DELAY)
+                {
+                    game.nextStep();
+                    renderGamePlay(renderer, game, gallery);
+                    start = end;
+                }
             SDL_Delay(1);
+            }
+            else if(game.isGameOver()){
+                SDL_Rect GameOverRect = {200, 200, 500, 200};
+                SDL_RenderCopy(renderer, gallery->getImage(PIC_GAME_OVER), NULL, &GameOverRect);
+                SDL_RenderPresent(renderer);
+            }
         }
-    renderGameOver(renderer, game);
 }
     delete gallery;
     quitSDL(window, renderer);

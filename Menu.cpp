@@ -31,16 +31,18 @@ Select Menu::ShowMenu()
         SDL_Rect howToPlayRect={765,90,60,80};
         if(gallery->getImage(PIC_SNAKE_START)==nullptr){
             std::cout<<"Unable to load texture"<<std::endl;
-    }
+        }
 
     SDL_RenderCopy(renderer,gallery->getImage(PIC_SNAKE_START), NULL, &backgroundRect);
     SDL_RenderPresent(renderer);
 
     while (SDL_PollEvent(&e) != 0)
     {
+        //cout<<"doi su kien menu"<<endl;
         if (e.type == SDL_QUIT) {
             choice = QUIT;
             isMenu = false;
+            //cout <<"thoat sk menu"<<endl;
         }
         else if (e.type == SDL_MOUSEBUTTONDOWN) {
             int x, y;
@@ -50,6 +52,7 @@ Select Menu::ShowMenu()
             {
                 choice = PLAY;
                 isMenu = false;
+                //cout <<"chon menu"<<endl;
             }
                 else if (SDL_PointInRect(&p, &howToPlayRect))
                 {
