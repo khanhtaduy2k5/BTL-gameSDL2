@@ -10,7 +10,7 @@ using namespace std;
 
 #define CLOCK_NOW chrono::system_clock::now
 typedef chrono::duration<double> ElapsedTime;
-Mix_Chunk* game_over=loadSound("gameover.mp3");
+//Mix_Chunk* game_over=loadSound("gameover.mp3");
 
 Gallery* gallery = nullptr;
 

@@ -19,7 +19,7 @@
 
 ### *Control* 
 
-| Control | Player 1 | Player 2 | 
+| Control |  Cách 1  |  Cách 2  |
 |---------|----------|----------|
 | UP      |     ↑    |     w    |
 | DOWN    |     ↓    |     s    |
@@ -28,19 +28,17 @@
 
 ### *Preview* 
 
-![](res/demo%20image/gamemode_demo.png)
-![](res/demo%20image/gameplay_demo.png) 
-![](res/demo%20image/end_demo.png)
+
 ## **Setup** 
 - *Cách 1*: 
     1. Truy cập đường dẫn  để tải file rar về máy
 
-    2. Giải nén file vừa tải, vào release và ấn đúp vào file main.exe để chơi game
+    2. Giải nén file vừa tải, vào release và ấn đúp vào file SNAKE.exe để chơi game
 
 - *Cách 2*: 
     - Yêu cầu: Có C++ compiler và tải 
 
-    1. Dùng terminal hoặc git bash tải source code về máy: git clone 
+    1. Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/khanhtaduy2k5/BTL-gameSDL2.git 
 
     2. Vào thư mục vừa tải về và ấn đúp vào 
 
@@ -52,32 +50,32 @@
 
 - Sử dụng nhiều class, vector, tách file, nạp chồng toán tử, ...
 
-- Có thể lưu lại điểm cao nhất sau mỗi lần chơi nhờ đọc, ghi file
-
 - Tạo các đối tượng: rắn, táo, đuôi, ... 
 
-- Tạo menu và các nút ấn di chuyển giữa các menu 
+- Tạo menu 
 
 ### *Nguồn tham khảo* 
 
-- Cách sử dụng thư viện SDL2.0, quản lý chương trình: Thảo khảo trên lazyfoo và các video của cô Nguyễn Thị Minh Châu, stack overflow, kênh youtube: codegopher, Let's Make Games, Madsycode. 
+- Cách sử dụng thư viện SDL2.0, quản lý chương trình: -Tham khảo trên lazyfoo 
 
-- Hình ảnh: 
+- Phát triển dựa trên mã nguồn: https://github.com/csuet/AdvProg_AY2324/tree/master/AdvProg_L7-Snake
 
-- Âm thanh: Tự tra trên google 
+- Hình ảnh: Tra trên Google 
+
+- Âm thanh: Lấy trên pixabay.com
 
 
 ## **Conclusion** 
 
 ### ***Điều tâm đắc***
-- Dự án này hoàn toàn là do em tự làm, không đi sao chép ở bất kì đâu 
 
-- Em thấy mình đã cải thiện được rất nhiều kỹ năng trong việc tư duy thuật toán và viết code, khả năng lên ý tưởng, các kỹ năng photoshop.
+- Em thấy mình đã cải thiện được rất nhiều kỹ năng trong việc tư duy thuật toán và viết code, khả năng lên ý tưởng.
 
 - Học được cách setup môi trường, sử dụng thư viện ngoài. 
 
 - Chương trình rất dễ để refactor cũng như update tính năng. 
 
-### ***Điểm hạn chế*** 
+### ***Điểm hạn chế***
+ 
 
 ### ***Hướng phát triển***

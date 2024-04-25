@@ -172,10 +172,10 @@ void interpretEvent(SDL_Event e, Game& game, bool& isquit)
     {
         switch (e.key.keysym.sym)
         {
-        	case SDLK_UP: game.processUserInput(UP); break;
-        	case SDLK_DOWN: game.processUserInput(DOWN); break;
-        	case SDLK_LEFT: game.processUserInput(LEFT); break;
-        	case SDLK_RIGHT: game.processUserInput(RIGHT); break;
+        	case SDLK_UP: case SDLK_w: game.processUserInput(UP); break;
+        	case SDLK_DOWN: case SDLK_s: game.processUserInput(DOWN); break;
+        	case SDLK_LEFT: case SDLK_a: game.processUserInput(LEFT); break;
+        	case SDLK_RIGHT: case SDLK_d: game.processUserInput(RIGHT); break;
         }
     }
      else if (e.type == SDL_QUIT)

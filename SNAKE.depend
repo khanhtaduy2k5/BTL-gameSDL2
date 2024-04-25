@@ -89,7 +89,7 @@
 1713963519 d:\btl_snakesdl2\btl-gamesdl2\position.h
 	<stdexcept>
 
-1714064854 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
+1714066690 source:d:\btl_snakesdl2\btl-gamesdl2\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -118,7 +118,7 @@
 	<string>
 	<SDL.h>
 
-1714063451 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
+1714066269 source:d:\btl_snakesdl2\btl-gamesdl2\sdl_utils.cpp
 	<iostream>
 	"SDL_utils.h"
 	<string>
