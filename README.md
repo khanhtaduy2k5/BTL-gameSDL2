@@ -74,7 +74,7 @@
 
 - Chương trình rất dễ để refactor cũng như update tính năng. 
 
-### ***Điểm hạn chế***
- 
+### ***Điểm hạn chế***  
 
 ### ***Hướng phát triển***
+- Tạo AI Snake
