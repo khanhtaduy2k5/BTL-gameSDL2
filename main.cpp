@@ -26,7 +26,6 @@ int main(int argc, char* argv[])
     Select choice = menu.ShowMenu();
     if (choice == PLAY)
     {
-//        cout<<"choice Play"<<endl;
         gallery = new Gallery(renderer);
         Game game(BOARD_WIDTH, BOARD_HEIGHT);
         SDL_Event e;
@@ -36,10 +35,8 @@ int main(int argc, char* argv[])
         renderSplashScreen();
         while ( !isquit)
         {
-//            cout <<"ve game chinh"<<endl;
             while (SDL_PollEvent(&e))
             {
-//                cout <<"nhan su kien game"<<endl;
                 interpretEvent(e, game,isquit);
             }
             if(game.isGameRunning()){
@@ -56,7 +53,6 @@ int main(int argc, char* argv[])
             else if(game.isGameOver()){
                 SDL_Rect GameOverRect = {200, 200, 500, 200};
                 SDL_RenderCopy(renderer, gallery->getImage(PIC_GAME_OVER), NULL, &GameOverRect);
-                //Mix_PlayChannel(-1,game_over,0);
                 SDL_RenderPresent(renderer);
             }
         }

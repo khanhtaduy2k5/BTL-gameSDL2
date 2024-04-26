@@ -6,7 +6,7 @@
 
 + Mã sinh viên: 23020677 
 
-+ Bài tập lớn: Snake Game (INT2215_52 - Lập trình nâng cao) 
++ Bài tập lớn: Snake Game /INT2215_52 - Lập trình nâng cao 
 
 ## **Description** 
 
@@ -31,21 +31,24 @@
 
 ## **Setup** 
 - *Cách 1*: 
-    1. Truy cập đường dẫn  để tải file rar về máy
-
-    2. Giải nén file vừa tải, vào release và ấn đúp vào file SNAKE.exe để chơi game
+    1. Truy cập đường dẫn https://github.com/khanhtaduy2k5/BTL_gameSDL2/releases/tag/published  để tải file rar về máy
+    (Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều (khoảng hơn 100MB).)
+    2. Giải nén file vừa tải vào một thư mục và bật SNAKE.exe để chơi game
 
 - *Cách 2*: 
-    - Yêu cầu: Có C++ compiler và tải 
+    - Yêu cầu: Có C++ compiler và tải Code::Blocks 
 
-    1. Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/khanhtaduy2k5/BTL-gameSDL2.git 
+    1. Clone repo: Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/khanhtaduy2k5/BTL-gameSDL2.git 
+    
+    Hoặc chọn Code -> Download Zip
 
-    2. Vào thư mục vừa tải về và ấn đúp vào 
+    2. Vào thư mục vừa tải về và ấn đúp vào project SNAKE 
 
-    3. Trên thanh công cụ vào  
+    3. Trên thanh công cụ bấm vào Build and run và bắt đầu chơi game.  
 
 
-### *Các kỹ thuật sử dụng*  
+### *Các kỹ thuật sử dụng*
+
 - Thư viện SDL2.0
 
 - Sử dụng nhiều class, vector, tách file, nạp chồng toán tử, ...
@@ -54,11 +57,13 @@
 
 - Tạo menu 
 
+- Đọc và xử lí âm thanh
+
 ### *Nguồn tham khảo* 
 
-- Cách sử dụng thư viện SDL2.0, quản lý chương trình: -Tham khảo trên lazyfoo 
-
 - Phát triển dựa trên mã nguồn: https://github.com/csuet/AdvProg_AY2324/tree/master/AdvProg_L7-Snake
+
+- Cách sử dụng thư viện SDL2.0, quản lý chương trình: -Tham khảo trên lazyfoo 
 
 - Hình ảnh: Tra trên Google 
 
@@ -66,15 +71,19 @@
 
 ## **Conclusion** 
 
+
 ### ***Điều tâm đắc***
 
-- Em thấy mình đã cải thiện được rất nhiều kỹ năng trong việc tư duy thuật toán và viết code, khả năng lên ý tưởng.
+- Em thấy mình đã cải thiện được rất nhiều kỹ năng trong việc viết code, khả năng lên ý tưởng.
 
 - Học được cách setup môi trường, sử dụng thư viện ngoài. 
 
 - Chương trình rất dễ để refactor cũng như update tính năng. 
 
-### ***Điểm hạn chế***  
 
 ### ***Hướng phát triển***
-- Tạo AI Snake
+- Tạo AI Snake để đấu với người chơi 
+
+- Rắn có thể đâm vào tường và đi ra ở hướng đối diện
+
+- Cập nhật thêm Highest Score. 

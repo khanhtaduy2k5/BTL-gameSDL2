@@ -29,27 +29,24 @@ Select Menu::ShowMenu()
             std::cout<<"Unable to load texture"<<std::endl;
         }
 
-    SDL_RenderCopy(renderer,gallery->getImage(PIC_SNAKE_START), NULL, &backgroundRect);
-    SDL_RenderPresent(renderer);
+        SDL_RenderCopy(renderer,gallery->getImage(PIC_SNAKE_START), NULL, &backgroundRect);
+        SDL_RenderPresent(renderer);
 
-    while (SDL_PollEvent(&e) != 0)
-    {
-        //cout<<"doi su kien menu"<<endl;
-        if (e.type == SDL_QUIT) {
-            choice = QUIT;
-            isMenu = false;
-            //cout <<"thoat sk menu"<<endl;
-        }
-        else if (e.type == SDL_MOUSEBUTTONDOWN) {
-            int x, y;
-            SDL_GetMouseState(&x, &y);
-            SDL_Point p ={x, y};
-            if (SDL_PointInRect(&p, &playRect))
-            {
-                choice = PLAY;
+        while (SDL_PollEvent(&e) != 0)
+        {
+            if (e.type == SDL_QUIT) {
+                choice = QUIT;
                 isMenu = false;
-                //cout <<"chon menu"<<endl;
             }
+            else if (e.type == SDL_MOUSEBUTTONDOWN) {
+                int x, y;
+                SDL_GetMouseState(&x, &y);
+                SDL_Point p ={x, y};
+                if (SDL_PointInRect(&p, &playRect))
+                {
+                    choice = PLAY;
+                    isMenu = false;
+                }
                 else if (SDL_PointInRect(&p, &howToPlayRect))
                 {
                     choice = HOW_TO_PLAY;
