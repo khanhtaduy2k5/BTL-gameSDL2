@@ -12,7 +12,11 @@
 
 ![](picture/start.jpg)
 
+-Màn hình chính của game
+
 ![](picture/gamevoer.png)
+
+-Game Over
 
 ### *Game description and instruction*  
 
@@ -34,12 +38,7 @@
 
 
 ## **Setup** 
-- *Cách 1*: 
-    1. Truy cập đường dẫn https://github.com/khanhtaduy2k5/BTL_gameSDL2/releases/tag/published  để tải file rar về máy
-    (Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều (khoảng 100MB).)
-    2. Giải nén file vừa tải vào một thư mục và bật SNAKE.exe để chơi game
 
-- *Cách 2*: 
     - Yêu cầu: Có C++ compiler và tải Code::Blocks 
 
     1. Clone repo: Dùng terminal hoặc git bash tải source code về máy: git clone https://github.com/khanhtaduy2k5/BTL-gameSDL2.git 
