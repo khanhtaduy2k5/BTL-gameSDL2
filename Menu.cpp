@@ -34,7 +34,8 @@ Select Menu::ShowMenu()
 
         while (SDL_PollEvent(&e) != 0)
         {
-            if (e.type == SDL_QUIT) {
+            if (e.type == SDL_QUIT)
+            {
                 choice = QUIT;
                 isMenu = false;
             }

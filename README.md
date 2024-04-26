@@ -8,14 +8,18 @@
 
 + Bài tập lớn: Snake Game /INT2215_52 - Lập trình nâng cao 
 
-## **Description** 
+## **Description**
+
+![](picture/start.jpg)
+
+![](picture/gamevoer.png)
 
 ### *Game description and instruction*  
 
 - Game có đầy đủ các chức năng hỗ trợ người chơi trong việc điều chỉnh dễ dàng giữa các chế độ, thoát game, mô tả cách chơi ... 
 
 
-- Video demo:
+- Video demo: https://youtu.be/pOB-ZGEsfTg
 
 ### *Control* 
 
@@ -32,7 +36,7 @@
 ## **Setup** 
 - *Cách 1*: 
     1. Truy cập đường dẫn https://github.com/khanhtaduy2k5/BTL_gameSDL2/releases/tag/published  để tải file rar về máy
-    (Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều (khoảng hơn 100MB).)
+    (Cách này tiết kiệm bộ nhớ và thời gian tải đi rất nhiều (khoảng 100MB).)
     2. Giải nén file vừa tải vào một thư mục và bật SNAKE.exe để chơi game
 
 - *Cách 2*: 
@@ -78,7 +82,7 @@
 
 - Học được cách setup môi trường, sử dụng thư viện ngoài. 
 
-- Chương trình rất dễ để refactor cũng như update tính năng. 
+- Rắn trong game được sử dụng danh sách liên kết đơn đã học trong chương trình 
 
 
 ### ***Hướng phát triển***
@@ -86,4 +90,4 @@
 
 - Rắn có thể đâm vào tường và đi ra ở hướng đối diện
 
-- Cập nhật thêm Highest Score. 
+- Cập nhật thêm Highest Score và Restart Game. 
