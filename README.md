@@ -81,7 +81,9 @@
 
 - Học được cách setup môi trường, sử dụng thư viện ngoài. 
 
-- Rắn trong game được sử dụng danh sách liên kết đơn đã học trong chương trình 
+- Rắn trong game được sử dụng danh sách liên kết đơn đã học trong chương trình
+
+- Trong game đã tạo được nhiều loại quả khác nhau với các chức năng khác nhau.
 
 
 ### ***Hướng phát triển***
