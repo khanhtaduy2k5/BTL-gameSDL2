@@ -23,7 +23,7 @@
 - Game có đầy đủ các chức năng hỗ trợ người chơi trong việc điều chỉnh dễ dàng giữa các chế độ, thoát game, mô tả cách chơi ... 
 
 
-- Video demo: https://youtu.be/pOB-ZGEsfTg
+
 
 ### *Control* 
 
